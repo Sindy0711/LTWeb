@@ -74,16 +74,6 @@ a {
   transform: scale(1.05);
 }
 
-/* Animation hiệu ứng rung nhẹ cho icon sét */
-@keyframes flashPulse {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  100% {
-    transform: scale(1.2) rotate(10deg);
-  }
-}
-
 /* Navbar */
 .navbar {
   background-color: white;
@@ -226,7 +216,8 @@ a {
 }
 
 .btn-shop:hover {
-  background-color: #c0392b;
+  background: var(--primary-hover);
+  transform: scale(1.05);
 }
 
 .hero-image {
@@ -343,4 +334,16 @@ a {
 .toast__close {
   font-size: 20px;
   color: rgba(0, 0, 0, 0.3);
+}
+
+/* Animation */
+
+/* Animation hiệu ứng rung nhẹ  */
+@keyframes flashPulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(10deg);
+  }
 }
