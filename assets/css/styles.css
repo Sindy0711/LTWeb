@@ -7,6 +7,7 @@
 :root {
   --primary-color: #165c46;
   --secondary-color: #f04e30;
+  --primary-hover: #1f7b60;
   --background-color: #cccccc;
 }
 body {
@@ -69,7 +70,7 @@ a {
 }
 
 .top-banner a:hover {
-  background: #333;
+  background: var(--primary-hover);
   transform: scale(1.05);
 }
 
