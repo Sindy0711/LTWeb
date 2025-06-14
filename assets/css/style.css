@@ -80,6 +80,23 @@ footer .logo img {
     width: 100px;
     height: 100px;
 }
+        footer .footer-container {
+            width: 90%;
+            max-width: 1140px;
+            margin: auto;
+            padding: 10px 0 0;
+        }
+
+        footer .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        footer .logo img {
+            height: 100px;
+            width: 100px;
+        }
 
 footer .logo h2 {
     color: #04382c;
