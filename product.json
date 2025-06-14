@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Áo Thun Nam Cotton Basic",
+        "price": 149000,
+        "description": "Chất liệu cotton mềm mại, thấm hút mồ hôi tốt.",
+        "image": "https://picsum.photos/id/1005/300/300",
+        "category": "Áo thun"
+    },
+    {
+        "id": 2,
+        "name": "Áo Sơ Mi Trắng Công Sở",
+        "price": 229000,
+        "description": "Form slim fit, vải không nhăn, lịch sự.",
+        "image": "https://picsum.photos/id/1001/300/300",
+        "category": "Áo sơ mi"
+    },
+    {
+        "id": 3,
+        "name": "Quần Jean Nam Rách Gối",
+        "price": 379000,
+        "description": "Phong cách trẻ trung, năng động, chất jean co giãn.",
+        "image": "https://picsum.photos/id/1021/300/300",
+        "category": "Quần jean"
+    },
+    {
+        "id": 4,
+        "name": "Váy Hoa Nhí Dáng Xòe",
+        "price": 299000,
+        "description": "Chất voan mềm, họa tiết dễ thương, nữ tính.",
+        "image": "https://picsum.photos/id/1020/300/300",
+        "category": "Váy"
+    },
+    {
+        "id": 5,
+        "name": "Áo Khoác Hoodie Nam",
+        "price": 359000,
+        "description": "Hoodie dày dặn, ấm áp, phù hợp mùa đông.",
+        "image": "https://picsum.photos/id/1049/300/300",
+        "category": "Áo khoác"
+    },
+    {
+        "id": 6,
+        "name": "Quần Short Kaki Nữ",
+        "price": 189000,
+        "description": "Mềm mại, thoải mái, thích hợp đi chơi hè.",
+        "image": "https://picsum.photos/id/1067/300/300",
+        "category": "Quần short"
+    },
+    {
+        "id": 7,
+        "name": "Chân Váy Tennis Trắng",
+        "price": 209000,
+        "description": "Chất liệu thun co giãn, thời trang Hàn Quốc.",
+        "image": "https://picsum.photos/id/1031/300/300",
+        "category": "Chân váy"
+    },
+    {
+        "id": 8,
+        "name": "Set Đồ Bộ Nữ 2 Món",
+        "price": 259000,
+        "description": "Đồ bộ mặc nhà thoải mái, nhiều màu sắc.",
+        "image": "https://picsum.photos/id/1050/300/300",
+        "category": "Đồ bộ"
+    }
+]
