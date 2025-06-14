@@ -6,11 +6,11 @@
 
 :root {
   --primary-color: #165c46;
-  --secondary-color: #ffffff;
-  --background-color: #ffffff;
+  --secondary-color: #f04e30;
+  --background-color: #cccccc;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: black;
   background-color: white;
 }
@@ -43,6 +43,46 @@ a {
 .top-banner a {
   color: white;
 }
+
+.top-banner i.flash-icon {
+  color: yellow;
+  animation: flashPulse 1s infinite alternate;
+  font-size: 1.2rem;
+}
+
+.top-banner i.bag-icon {
+  color: white;
+  margin-right: 5px;
+}
+
+.top-banner a {
+  margin-left: 15px;
+  color: #fff;
+  background: var(--secondary-color);
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.top-banner a:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* Animation hiệu ứng rung nhẹ cho icon sét */
+@keyframes flashPulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(10deg);
+  }
+}
+
 /* Navbar */
 .navbar {
   background-color: white;
@@ -143,7 +183,7 @@ a {
 .hero {
   background: var(--primary-color);
   padding: 60px 20px;
-  height: ;
+  /* height: ; */
 }
 
 .hero-container {
@@ -174,7 +214,7 @@ a {
 
 .btn-shop {
   display: inline-block;
-  background-color: #e74c3c;
+  background-color: var(--secondary-color);
   color: white;
   padding: 14px 30px;
   text-decoration: none;
@@ -198,4 +238,108 @@ a {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
+}
+
+/* Toast */
+#toast {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-left: 4px solid;
+  min-width: 400px;
+  max-width: 450px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 32px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.toast--success {
+  border-color: #47d864;
+}
+
+.toast--success .toast__icon {
+  color: #47d864;
+}
+
+.toast--info {
+  border-color: #2f86eb;
+}
+
+.toast--info .toast__icon {
+  color: #2f86eb;
+}
+
+.toast--warning {
+  border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+  color: #ffc021;
+}
+
+.toast--error {
+  border-color: #ff623d;
+}
+
+.toast--error .toast__icon {
+  color: #ff623d;
+}
+
+.toast + .toast {
+  margin-top: 24px;
+}
+
+.toast__icon,
+.toast__close {
+  padding: 0 16px;
+  font-size: 24px;
+}
+
+.toast__body {
+  flex-grow: 1;
+}
+
+.toast__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.toast__msg {
+  font-size: 14px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.toast__close {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
 }
