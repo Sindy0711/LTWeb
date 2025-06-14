@@ -29,8 +29,9 @@
             align-items: center;
             gap: 10px;
         }
-
+        
         footer .logo img {
+            height: 100px;
             width: 100px;
         }
 
