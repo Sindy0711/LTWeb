@@ -44,6 +44,12 @@
             color: #666;
             display: flex;
             gap: 8px;
+            
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #333;
         }
 
         .breadcrumb .breadcrumb-current {
@@ -123,9 +129,9 @@
     <div class="container">
         <!-- Breadcrumb -->
         <div class="breadcrumb">
-            <p class="breadcrumb-home">Trang chủ</p>
+            <a href="#" class="breadcrumb-home">Trang chủ</a>
             <p class="breadcrumb-separator">/</p>
-            <p class="breadcrumb-current">Giới thiệu</p>
+            <a href="#" class="breadcrumb-current">Giới thiệu</a>
         </div>
 
         <!-- Tiêu đề trang -->
