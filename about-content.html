@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Exclusive</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset và font chung */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            gap: 8px;
+        }
+
+        .breadcrumb .breadcrumb-current {
+            font-weight: bold;
+        }
+
+        /* Tiêu đề */
+        .page-title {
+            font-size: 32px;
+            margin: 30px 0;
+            font-weight: 700;
+            color: #222;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Nội dung chính */
+        .about-content {
+            text-align: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Team section */
+        .team-section {
+            margin-top: 50px;
+        }
+
+        .team-members {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .member {
+            width: calc(33.33% - 20px);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .member-img {
+            width: 100%;
+
+        }
+
+        .member-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .member-position {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .member-social-media-account {
+            display: flex;
+            gap: 16px;
+            color: #000;
+        }
+
+        .member-social-media-account i {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <p class="breadcrumb-home">Trang chủ</p>
+            <p class="breadcrumb-separator">/</p>
+            <p class="breadcrumb-current">Giới thiệu</p>
+        </div>
+
+        <!-- Tiêu đề trang -->
+        <h1 class="page-title">Giới thiệu</h1>
+
+        <!-- Nội dung về công ty -->
+        <div class="about-content">
+            <div class="about-text">
+                <p>Aurenest là thương hiệu thời trang tiên phong trong việc kết hợp giữa nét thanh lịch hiện đại và chất
+                    riêng đậm
+                    cá tính. Với triết lý “Nơi phong cách tìm về bản ngã”, Aurenest không chỉ tạo ra quần áo – chúng tôi
+                    tạo nên
+                    tuyên ngôn thời trang cho thế hệ mới.
+                </p>
+
+                <p>Mỗi thiết kế của Aurenest là một sự cân bằng giữa tinh tế và táo bạo, lấy cảm hứng từ nhịp sống đô
+                    thị,
+                    sự chuyển mình của thời đại, và khát khao thể hiện bản thân của những con người không ngừng tiến về
+                    phía trước.
+                    Chất liệu được tuyển chọn kỹ lưỡng, đường may được chăm chút tỉ mỉ – bởi vì chúng tôi tin rằng thời
+                    trang
+                    không chỉ để mặc, mà còn để truyền tải giá trị sống.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Team members -->
+        <div class="team-section">
+            <div class="team-members">
+                <!-- Member 1 -->
+                <div class="member">
+                    <img src="./assets/img/bandmember.jpg" alt="" class="member-img">
+                    <div class="member-name">Name 1</div>
+                    <div class="member-position">Founder</div>
+                    <div class="member-social-media-account">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="member">
+                    <img src="./assets/img/bandmember.jpg" alt="" class="member-img">
+                    <div class="member-name">Name 2</div>
+                    <div class="member-position">Founder</div>
+                    <div class="member-social-media-account">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
