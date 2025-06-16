@@ -19,7 +19,6 @@
   <!-- Custom css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/styles.css" />
-  <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -36,7 +35,6 @@
         <img src="" alt="" />
         <span>AURENEST</span>
       </div>
-
       <ul class="nav-links">
         <li><a href="#">Trang chủ</a></li>
         <li><a href="#">Giới thiệu</a></li>
@@ -69,90 +67,134 @@
         </div>
       </div>
     </div>
-    </div>
+  </nav>
+
+  <main>
     <!-- hero -->
     <section class="hero">
       <div class="hero-container">
         <div class="hero-text">
-          <h1>Khám phá Ưu đãi Mới Nhất</h1>
+          <h1>TÌM KIẾM PHONG CÁCH BẢN THÂN</h1>
           <p>
             Giảm giá lên đến 50% cho tất cả sản phẩm mùa hè – chỉ có hôm nay!
           </p>
           <a href="#shop" class="btn-shop">Mua Ngay</a>
+          <div class="stats">
+            <div>
+              <h2>200+</h2>
+              <p>Thương hiệu quốc tế</p>
+            </div>
+            <div>
+              <h2>2,0000</h2>
+              <p>Sản phẩm chất lượng</p>
+            </div>
+            <div>
+              <h2>30,000</h2>
+              <p>Khách hàng</p>
+            </div>
+          </div>
         </div>
-        <!-- <div class="hero-image">
-          <img src="" alt="Sản phẩm nổi bật" />
-        </div> -->
+        <div class="hero-images">
+          <img class="big-image" src="https://i.pinimg.com/736x/38/94/e5/3894e5208988f88e33024fa9e50a011c.jpg"
+            alt="Sản phẩm nổi bật" />
+          <img class="small-image" src="https://i.pinimg.com/736x/7f/66/30/7f6630154ea3fbd26b7819f6c1a133fa.jpg"
+            alt="Sản phẩm nổi bật" />
+
+        </div>
       </div>
     </section>
 
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h2>Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi</h2>
-                <div class="form">
-                    <input type="text" placeholder="Điền địa chỉ email của bạn">
-                    <button>Đăng ký</button>
-                </div>
-            </div>
-            <div class="footer-body">
-                <div class="footer-column">
-                    <div class="logo">
-                        <img src="./assets/img/Logo.png" alt="Logo" />
-                        <h2>AURENEST</h2>
-                    </div>
-                    <p class="tagline">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Chính sách</h4>
-                    <ul>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                        <li><a href="#">Chính sách vận chuyển</a></li>
-                        <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
-                        <li><a href="#">Quy định sử dụng</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Sản phẩm</h4>
-                    <ul>
-                        <li><a href="#">Quần</a></li>
-                        <li><a href="#">Áo</a></li>
-                        <li><a href="#">Giày</a></li>
-                        <li><a href="#">Nón</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Liên hệ</h4>
-                    <ul>
-                        <li>(+84)</li>
-                        <li>(+84)</li>
-                        <li>aurenest@gmail.com</li>
-                        <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
-                    </ul>
-                </div>
-
-                <!-- <div class="clear"></div> -->
-            </div>
-
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            </div>
-
+    <section class="best-sellers" id="best-sellers">
+      <div class="container "> 
+        <div class="header-best-sellers">
+          <h2>
+            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b;"></i> BEST SELLERS
+          </h2>
+          <div class="carousel-buttons">
+            <button class="carousel-btn top" id="prevBtn">&#8592;</button>
+            <button class="carousel-btn top" id="nextBtn">&#8594;</button>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <div class="copyright">&copy; 2025, AURENEST</div>
+        <div class="body-best-sellers">
+          <div class="product-carousel" id="product-carousel">
+            <!-- JS sẽ render sản phẩm tại đây -->
+          </div>
         </div>
-    </footer>
 
-    <div id="toast-container"></div>
-    <script src="./assets/javascripts/scripts.js"></script>
+        <div class="text-center">
+          <button class="btn-view-all">View All Products</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h2>Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi</h2>
+        <div class="form">
+          <input type="text" placeholder="Điền địa chỉ email của bạn">
+          <button>Đăng ký</button>
+        </div>
+      </div>
+      <div class="footer-body">
+        <div class="footer-column">
+          <div class="logo">
+            <img src="./assets/img/Logo.png" alt="Logo" />
+            <h2>AURENEST</h2>
+          </div>
+          <p class="tagline">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Chính sách</h4>
+          <ul>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Chính sách vận chuyển</a></li>
+            <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
+            <li><a href="#">Quy định sử dụng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Sản phẩm</h4>
+          <ul>
+            <li><a href="#">Quần</a></li>
+            <li><a href="#">Áo</a></li>
+            <li><a href="#">Giày</a></li>
+            <li><a href="#">Nón</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Liên hệ</h4>
+          <ul>
+            <li>(+84)</li>
+            <li>(+84)</li>
+            <li>aurenest@gmail.com</li>
+            <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
+          </ul>
+        </div>
+
+        <!-- <div class="clear"></div> -->
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">&copy; 2025, AURENEST</div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="./assets/javascripts/scripts.js" type="module"></script>
 </body>
 
 </html>
