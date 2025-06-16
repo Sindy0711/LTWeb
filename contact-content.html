@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurenest | Liên hệ</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset và font chung */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            display: flex;
+            gap: 8px;
+            
+        }
+        
+        .breadcrumb a {
+            font-size: 14px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .breadcrumb a:hover {
+            color: #000;
+        }
+
+        .breadcrumb .breadcrumb-current {
+            font-weight: bold;
+        }
+
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        
+        .contact-method {
+            margin-bottom: 30px;
+        }
+        
+        .contact-method h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+        
+        .contact-method p {
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .send-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .send-btn:hover {
+            background-color: #333;
+        }
+        
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#" class="breadcrumb-home">Trang chủ</a> 
+            / 
+            <a href="#" class="breadcrumb-current">Liên hệ</a>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Liên hệ cho chúng tôi</h2>
+                <div class="contact-method">
+                    <p>CHúng tôi luôn sẵn sàng 24/7, 7 ngày một tuần.</p>
+                    <p>Điện thoại: +84</p>
+                </div>
+                
+                <h2>Viết cho chúng tôi</h2>
+                <div class="contact-method">
+                    <p>Điền vào mẫu đơn và chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.</p>
+                    <p>Email: aurenest@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Liên hệ với chúng tôi</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Họ và tên *</label>
+                        <input type="text" id="name" name="name" placeholder="Vui lòng nhập họ và tên đầy đủ" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Địa chỉ Email *</label>
+                        <input type="email" id="email" name="email" placeholder="Vui lòng nhập địa chỉ email hợp lệ" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Vui lòng nhập số điện thoại hợp lệ" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Nội dung</label>
+                        <textarea id="message" name="message" placeholder="Vui lòng nhập nội dung bạn muốn gửi đến chúng tôi"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="send-btn">Gửi thông điệp</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
