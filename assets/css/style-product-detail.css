@@ -269,6 +269,41 @@ body {
     flex-wrap: wrap;
 }
 
+.product-reviews .heading {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.product-reviews .heading .option-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.product-reviews .heading .option-group .sort {
+    background-color: #eee;
+    border-radius: 20px;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+.product-reviews .heading .option-group .write-btn {
+    background-color: #f04e30;
+    border-radius: 20px;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 0;
+}
+
+.product-reviews .heading .option-group .write-btn:hover {
+    background-color: rgba(240, 78, 48, 0.9);
+}
+
 .product-review-container {
     display: flex;
     flex-wrap: wrap;
