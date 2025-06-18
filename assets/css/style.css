@@ -16,7 +16,7 @@ footer {
 footer .footer-container {
     width: 1140;
     max-width: 1140px;
-    margin: auto;
+    margin: 0 auto;
     padding: 100px 0 0;
     position: relative;
 }
@@ -25,7 +25,7 @@ footer .footer-section {
     width: 1000px;
     max-width: 1000px;
     position: absolute;
-    top: -60px;
+    top: -20%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #04382c;
@@ -34,7 +34,9 @@ footer .footer-section {
     border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 100px;
+    /* gap: 100px; */
+    justify-content: space-between;
+
 }
 
 footer .footer-section h2 {
