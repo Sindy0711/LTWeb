@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurenest | Giới thiệu</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./assets/css/style-contact.css">
+
+</head>
+
+<body>
+
+    <div class="banner">
+        <div class="text-content">
+            <h1 class="text-heading fade-left">Liên hệ với chúng tôi</h1>
+            <div class="text-decription fade-right">
+                <p>Chúng tôi luôn sẵn sàng 24/7, 7 ngày một tuần.</p>
+                <p>Điện thoại: +84</p>
+                <p>Email: aurenest@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form fade-zoom">
+            <h2 class="form-title">Liên hệ với chúng tôi</h2>
+            <div class="form-control-group">
+                <div class="name-form">
+                    <input type="text" name="" required placeholder="Nhập họ của bạn" id="" class="form-control">
+                    <input type="text" name="" required placeholder="Nhập tên của bạn" id="" class="form-control">
+                </div>
+                <input type="email" name="" required placeholder="Nhập địa chỉ email" id="" class="form-control">
+                 <textarea name="" required placeholder="Vui lòng nhập nội dung bạn muốn gửi đến chúng tôi" id="" class="form-control"></textarea>
+            </div>
+            <button class="send-btn">Gửi thông điệp</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-body">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="./assets/img/Logo.png" alt="Logo" />
+                        <h2>AURENEST</h2>
+                    </div>
+                    <p class="tagline">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
+                        <li><a href="#">Quy định sử dụng</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Sản phẩm</h4>
+                    <ul>
+                        <li><a href="#">Quần</a></li>
+                        <li><a href="#">Áo</a></li>
+                        <li><a href="#">Giày</a></li>
+                        <li><a href="#">Nón</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Liên hệ</h4>
+                    <ul>
+                        <li>(+84)</li>
+                        <li>(+84)</li>
+                        <li>aurenest@gmail.com</li>
+                        <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025, AURENEST</div>
+        </div>
+    </footer>
+
+    <script>
+        // animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('[class*="fade-"]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
