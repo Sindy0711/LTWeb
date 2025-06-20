@@ -125,6 +125,11 @@ a {
   color: #165c46;
   border-bottom: 2px solid var(--primary-color);
 }
+
+.nav-links li a.active {
+  color: #165c46;
+  border-bottom: 2px solid var(--primary-color);
+}
 .holder {
   display: flex;
   align-items: center;
@@ -231,7 +236,7 @@ a {
   padding: 20px;
   max-width: 600px;
   position: relative;
-  top: 60px; 
+  top: 60px;
 }
 .hero-text h1 {
   font-size: 3rem;
@@ -260,7 +265,7 @@ a {
   transform: scale(1.05);
 }
 
-.stats{
+.stats {
   display: flex;
   gap: 20px;
   margin-top: 40px;
@@ -350,7 +355,7 @@ a {
 .product-carousel {
   display: flex;
   gap: 20px;
-  overflow: hidden; 
+  overflow: hidden;
   scroll-behavior: smooth;
   padding-bottom: 10px;
 }

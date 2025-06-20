@@ -30,7 +30,7 @@ function initCarousel(productCount) {
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
 
-  const cardWidth = 240; // mỗi card + khoảng cách (220px + 20px gap)
+  const cardWidth = 300; // mỗi card + khoảng cách (300px + 20px gap)
   const visibleCards = 4;
   const totalPages = Math.ceil(productCount / visibleCards);
   const maxScroll = (totalPages - 1) * cardWidth * visibleCards;
