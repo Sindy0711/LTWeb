@@ -52,7 +52,7 @@ body {
 .product-container {
     display: flex;
     gap: 30px;
-
+    margin: 10px 0 20px;
 }
 
 /* Phần hình ảnh sản phẩm */
@@ -381,6 +381,134 @@ body {
 .testimonial .content {
     font-weight: 100;
     margin: 0 0 20px;
+}
+
+/* modal review */
+
+.modal-review {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+.modal-review-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.review-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.rating-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.rating-title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    font-size: 24px;
+    color: #ddd;
+    transition: color 0.2s;
+}
+
+/* Khi được chọn - tất cả sao từ trái đến sao được chọn sẽ vàng */
+.star-rating input:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: #ddd;
+    /* Màu mặc định */
+}
+
+.star-rating input:checked+label,
+.star-rating input:hover+label,
+.star-rating label:hover,
+.star-rating input:hover~label:has(~ label:hover) {
+    color: #ffc107;
+    /* Màu vàng khi hover hoặc chọn */
+}
+
+.rating-value {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.review-content {
+    margin-bottom: 20px;
+}
+
+.review-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.review-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 120px;
+    resize: vertical;
+    font-size: 14px;
+}
+
+.review-textarea:focus {
+    outline: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f04e30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: rgba(240, 78, 48, 0.9);
 }
 
 /* mobile */

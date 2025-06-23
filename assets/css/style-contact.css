@@ -79,7 +79,7 @@ body {
     position: absolute;
     width: 762px;
     height: 615px;
-    padding: 40px 60px;  
+    padding: 40px 60px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -273,4 +273,99 @@ footer .copyright {
 .fade-left.active {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* mobile */
+@media only screen and (max-width: 46.25rem) {
+    /* banner */
+    .banner .text-content {
+        flex-direction: column;
+    }
+
+    .banner .text-heading {
+        font-size: 40px;
+    }
+
+    .banner .text-decription {
+        font-size: 24px;
+    }
+
+.form-section .form {
+    width: 98%;
+    padding: 10px;
+    height: auto;
+}
+
+.form-section .form .name-form {
+    flex-direction: column;
+}
+
+.form-section .form .form-title {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    .form-section .form .form-control {
+        font-size: 16px;
+    }
+
+    .form-section .form .send-btn {
+        font-size: 16px;
+        border: 0;
+        font-weight: 600;
+    }
+    /* footer */
+    footer .footer-container {
+        width: 96%;
+    }
+
+    footer .footer-section h2 {
+        font-size: 20px;
+    }
+
+    footer .footer-body {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer .footer-body .footer-column {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    footer .footer-body .footer-column .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    footer .logo h2 {
+        font-size: 20px;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 46.35rem) and (max-width: 64rem) {
+    .banner .text-content {
+        bottom: 25%;
+    }
+
+    /* footer */
+    footer .footer-container {
+        width: 96%;
+    }
+
+    footer .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    footer .logo h2 {
+        font-size: 20px;
+    }
 }

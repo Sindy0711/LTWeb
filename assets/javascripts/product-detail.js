@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// product-detail.js
+// Thêm sự kiện nut load phần đánh giá
 document.addEventListener('DOMContentLoaded', function() {
     const reviewContainer = document.querySelector('.product-review-container');
     const testimonials = document.querySelectorAll('.testimonial');
@@ -107,4 +107,73 @@ document.addEventListener('DOMContentLoaded', function() {
             loadMoreReviewsBtn.style.display = 'none';
         }
     });
+});
+
+
+// Thêm sự kiện cho modal review đánh giá số sao
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.star-rating input');
+    const ratingValue = document.getElementById('ratingValue');
+    const starLabels = document.querySelectorAll('.star-rating label');
+    let selectedRating = 0;
+
+    //cập nhật đánh giá
+    function updateRating(value) {
+        selectedRating = parseInt(value);
+        const ratings = {
+            1: 'Rất không hài lòng',
+            2: 'Không hài lòng',
+            3: 'Bình thường',
+            4: 'Hài lòng',
+            5: 'Rất hài lòng'
+        };
+        ratingValue.textContent = ratings[selectedRating] || 'Bạn chưa chọn đánh giá';
+        
+        // Cập nhật màu sao
+        starLabels.forEach((label, index) => {
+            const starValue = index + 1;
+            label.querySelector('i').style.color = starValue <= selectedRating ? '#ffc107' : '#ddd';
+        });
+    }
+
+    // Xử lý sự kiện click
+    stars.forEach(star => {
+        star.addEventListener('change', function() {
+            updateRating(this.value);
+        });
+    });
+
+    // Xử lý hover
+    starLabels.forEach((label, index) => {
+        const starValue = index + 1;
+        
+        label.addEventListener('mouseover', () => {
+            starLabels.forEach((l, i) => {
+                const currentValue = i + 1;
+                l.querySelector('i').style.color = currentValue <= starValue ? '#ffc107' : '#ddd';
+            });
+        });
+
+        label.addEventListener('mouseout', () => {
+            updateRating(selectedRating);
+        });
+    });
+});
+
+// Thêm sự kiện đóng modal khi nhấn bên ngoài
+document.addEventListener('DOMContentLoaded', function() {
+    const modalReview = document.querySelector('.modal-review');
+    
+    modalReview.addEventListener('click', function(e) {
+        if (e.target === modalReview) {
+            modalReview.style.display = 'none';
+        }
+    });
+    
+    const writeReviewBtn = document.querySelector('.write-btn');
+    if (writeReviewBtn) {
+        writeReviewBtn.addEventListener('click', function() {
+            modalReview.style.display = 'flex'; 
+        });
+    }
 });
