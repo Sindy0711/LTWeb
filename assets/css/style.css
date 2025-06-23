@@ -52,11 +52,23 @@ footer .footer-section .form input {
     width: 100%;
     padding: 8px;
     margin: 4px 0;
+    border: 0;
     border-radius: 20px;
 }
 
+footer .footer-section .form button {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+footer .footer-section .form input:focus {
+    outline: none;
+}
+
 footer .footer-section .form button:hover {
-    background-color: #e6ecea;
+    /* background-color: #ff6b00; */
+    background-color: rgb(231, 76, 60);
+    color: #fff;
 }
 
 footer .footer-body {
@@ -149,7 +161,7 @@ footer .footer-container {
     }
 
     footer .footer-body {
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 20px;
         padding-top: 12%;
     }
