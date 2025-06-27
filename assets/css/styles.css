@@ -8,6 +8,7 @@
   --primary-color: #2c6e49;
   --secondary-color: #f04e30;
   --primary-hover: #1f7b60;
+  --secondary-hover: #d73b20;
   --background-color: #cccccc;
 }
 body {
@@ -70,7 +71,7 @@ a {
 }
 
 .top-banner a:hover {
-  background: var(--primary-hover);
+  background: var(--secondary-hover);
   transform: scale(1.05);
 }
 
@@ -121,12 +122,8 @@ a {
   transition: color 0.3s;
 }
 
-.nav-links li a:hover {
-  color: #165c46;
-  border-bottom: 2px solid var(--primary-color);
-}
-
-.nav-links li a.active {
+.nav-links li a:hover,
+.nav-links li.active {
   color: #165c46;
   border-bottom: 2px solid var(--primary-color);
 }
@@ -261,7 +258,7 @@ a {
 }
 
 .btn-shop:hover {
-  background: var(--primary-hover);
+  background: var(--secondary-hover);
   transform: scale(1.05);
 }
 
@@ -355,7 +352,6 @@ a {
 .product-carousel {
   display: flex;
   gap: 20px;
-  overflow: hidden;
   scroll-behavior: smooth;
   padding-bottom: 10px;
 }
