@@ -15,184 +15,131 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Reset và font chung */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        html {
-            font-family: 'Open Sans', sans-serif;
-        }
+    <link rel="stylesheet" href="./assets/css/style-about.css">
 
-        body {
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            padding: 20px 0;
-            display: flex;
-            gap: 8px;
-            
-        }
-        
-        .breadcrumb a {
-            font-size: 14px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .breadcrumb a:hover {
-            color: #000;
-        }
-
-        .breadcrumb .breadcrumb-current {
-            font-weight: bold;
-        }
-
-        /* Tiêu đề */
-        .page-title {
-            font-size: 32px;
-            margin: 30px 0;
-            font-weight: 700;
-            color: #222;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        /* Nội dung chính */
-        .about-content {
-            text-align: center;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 16px;
-            color: #555;
-        }
-
-        /* Team section */
-        .team-section {
-            margin-top: 50px;
-        }
-
-        .team-members {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-        }
-
-        .member {
-            width: calc(33.33% - 20px);
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .member-img {
-            width: 100%;
-
-        }
-
-        .member-name {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .member-position {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .member-social-media-account {
-            display: flex;
-            gap: 16px;
-            color: #000;
-        }
-
-        .member-social-media-account i {
-            color: #000;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
-        <!-- Breadcrumb -->
-        <div class="breadcrumb">
-            <a href="#" class="breadcrumb-home">Trang chủ</a>
-            /
-            <a href="#" class="breadcrumb-current">Giới thiệu</a>
-        </div>
 
-        <!-- Tiêu đề trang -->
-        <h1 class="page-title">Giới thiệu</h1>
-
-        <!-- Nội dung về công ty -->
-        <div class="about-content">
-            <div class="about-text">
-                <p>Aurenest là thương hiệu thời trang tiên phong trong việc kết hợp giữa nét thanh lịch hiện đại và chất
-                    riêng đậm
-                    cá tính. Với triết lý “Nơi phong cách tìm về bản ngã”, Aurenest không chỉ tạo ra quần áo – chúng tôi
-                    tạo nên
-                    tuyên ngôn thời trang cho thế hệ mới.
+        <div class="banner">
+            <div class="text-content">
+                <h1 class="text-heading">Giới thiệu</h1>
+                <p class="text-decription fade-zoom ">Aurenest là thương hiệu thời trang tiên phong trong việc kết hợp giữa
+                    nét thanh lịch hiện đại và chất riêng đậmcá tính. Với triết lý “Nơi phong cách tìm về bản ngã”,
+                    Aurenest không chỉ tạo ra quần áo – chúng tôi tạo nên tuyên ngôn thời trang cho thế hệ mới.
                 </p>
-
-                <p>Mỗi thiết kế của Aurenest là một sự cân bằng giữa tinh tế và táo bạo, lấy cảm hứng từ nhịp sống đô
-                    thị,
-                    sự chuyển mình của thời đại, và khát khao thể hiện bản thân của những con người không ngừng tiến về
-                    phía trước.
-                    Chất liệu được tuyển chọn kỹ lưỡng, đường may được chăm chút tỉ mỉ – bởi vì chúng tôi tin rằng thời
-                    trang
-                    không chỉ để mặc, mà còn để truyền tải giá trị sống.
-                </p>
+                <button class="learn-more-btn fade-bottom">Tìm hiểu thêm</button>
             </div>
-
         </div>
-
-        <!-- Team members -->
-        <div class="team-section">
-            <div class="team-members">
-                <!-- Member 1 -->
-                <div class="member">
-                    <img src="./assets/img/bandmember.jpg" alt="" class="member-img">
-                    <div class="member-name">Name 1</div>
-                    <div class="member-position">Founder</div>
-                    <div class="member-social-media-account">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    
+        <div class="content">
+            <div class="member-section">
+                <h2 class="text-heading fade-zoom">Đội ngũ của chúng tôi</h2>
+                <div class="member-list">
+                    <div class="member-item fade-bottom">
+                        <img src="./assets/img/avatar.jpg" alt="" class="member-img fade-zoom">
+                        <h3 class="member-name fade-zoom">Name</h3>
+                        <p class="member-position fade-zoom">Manager</p>
+                    </div>
+                    <div class="member-item fade-bottom">
+                        <img src="./assets/img/avatar.jpg" alt="" class="member-img fade-zoom">
+                        <h3 class="member-name fade-zoom">Name</h3>
+                        <p class="member-position fade-zoom">Manager</p>
                     </div>
                 </div>
-
-                <!-- Member 2 -->
-                <div class="member">
-                    <img src="./assets/img/bandmember.jpg" alt="" class="member-img">
-                    <div class="member-name">Name 2</div>
-                    <div class="member-position">Founder</div>
-                    <div class="member-social-media-account">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-
-
+            </div>
+        </div>
+    
+        <div class="form-section">
+            <div class="form fade-right">
+                <h2 class="form-title">Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi</h2>
+                <input type="email" placeholder="Email" class="form-control">
+                <button class="send-btn">Đăng ký</button>
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-body">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="./assets/img/Logo.png" alt="Logo" />
+                        <h2>AURENEST</h2>
+                    </div>
+                    <p class="tagline">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
+                        <li><a href="#">Quy định sử dụng</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Sản phẩm</h4>
+                    <ul>
+                        <li><a href="#">Quần</a></li>
+                        <li><a href="#">Áo</a></li>
+                        <li><a href="#">Giày</a></li>
+                        <li><a href="#">Nón</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Liên hệ</h4>
+                    <ul>
+                        <li>(+84)</li>
+                        <li>(+84)</li>
+                        <li>aurenest@gmail.com</li>
+                        <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025, AURENEST</div>
+        </div>
+    </footer>
+
+    <script>
+        // animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('[class*="fade-"]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 
 </html>

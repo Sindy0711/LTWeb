@@ -16,255 +16,9 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="./assets/css/style-product-detail.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
-        html {
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .divider {
-            height: 1px;
-            margin: 0 0 10px;
-            background-color: #ddd;
-            
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            padding: 20px 0;
-            display: flex;
-            gap: 8px;
-        }
-
-        .breadcrumb a {
-            font-size: 14px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .breadcrumb a:hover {
-            color: #000;
-        }
-
-        .breadcrumb .breadcrumb-current {
-            font-weight: bold;
-        }
-
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin: 20px 0;
-        }
-
-        /* Phần hình ảnh sản phẩm */
-        .product-thumbnails {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .product-thumbnails img {
-            width: 150px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: border 0.3s;
-            background-color: #999;
-        }
-
-        .product-thumbnails img:hover {
-            border: 2px solid #555;
-        }
-
-        .product-main img {
-            width: 450px;
-            height: 530px;
-            border-radius: 10px;
-            object-fit: cover;
-            background-color: #999;
-        }
-
-        /* Phần thông tin sản phẩm */
-        .product-info {
-            flex: 1;
-            max-width: 1000px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 0 10px;
-        }
-
-        .product-title {
-            font-size: 28px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        /* rating */
-        .rating {
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            gap: 5px;
-            margin: 0 0 10px;
-        }
-
-        .fa-solid {
-            color: #f1c40f;
-        }
-
-        .score {
-            font-size: 16px;
-            margin-left: 8px;
-            color: #444;
-        }
-
-        /* giá tiền */
-        .product-prices {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 10px;
-            align-items: center;
-        }
-
-        .current-price {
-            font-size: 24px;
-            font-weight: 700;
-            color: rgb(231, 76, 60);
-        }
-
-        .old-price {
-            font-size: 20px;
-            color: #999;
-            text-decoration: line-through;
-        }
-
-        .discount {
-            background-color: #FF33331A;
-            padding: 1px 5px;
-            font-size: 14px;
-            border-radius: 10px;
-            color: rgb(231, 76, 60);
-        }
-
-        /* short describe */
-        .short-describe {
-            font-size: 15px;
-            margin: 0 0 10px;
-            text-align: justify;
-        }
-
-        /* options */
-        .option-group {
-            margin-bottom: 20px;
-        }
-
-        .option-title {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .color-options {
-            display: flex;
-            gap: 10px;
-        }
-
-        .color-option {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .color-option.selected {
-            border-color: #000;
-        }
-
-        .size-options {
-            display: flex;
-            gap: 10px;
-        }
-
-        .size-option {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .size-option.selected {
-            background-color: #000;
-            color: #fff;
-            border-color: #000;
-        }
-
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100px;
-            padding: 5px 10px;
-            border-radius: 999px;
-            background-color: #f2f2f2;
-            font-family: sans-serif;
-        }
-
-        .btn {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        #quantity {
-            font-size: 16px;
-            margin: 0 10px;
-        }
-
-        /* add to cart btn */
-        .add-to-cart-btn {
-            width: 100%;
-            line-height: 40px;
-            background-color: rgb(231, 76, 60);
-            color: #fff;
-            border-radius: 100px;
-            border: 0;
-        }
-
-        .add-to-cart-btn:hover {
-            background-color: rgba(231, 76, 60, 0.9);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -277,23 +31,24 @@
             <span class="breadcrumb-separator">/</span>
             <a href="" class="breadcrumb-category">Pants</a>
             <span class="breadcrumb-separator">/</span>
-            <a href="" class="breadcrumb-current">Quần Jean</a>
+            <a href="" class="breadcrumb-current">Áo thun</a>
         </div>
 
         <div class="product-container">
             <!-- Phần hình ảnh sản phẩm -->
-            <div class="product-thumbnails">
-                <img src="./assets/img/Jean.png" alt="Front View">
-                <img src="./assets/img/Jean.png" alt="Back View">
-                <img src="./assets/img/Jean.png" alt="Model View">
-            </div>
-            <div class="product-main">
-                <img src="./assets/img/Jean.png" alt="Main Product Image">
+            <div class="product-img">
+                <div class="product-thumbnails">
+                    <img src="./assets/img/product/8812805d-ce7e-8102-5394-001c885d693b.jpg" alt="Front View">
+                    <img src="./assets/img/product/c7e6079f-76a8-8202-b908-001c885d71e3.jpg" alt="Back View">
+                    <img src="./assets/img/product/e8b0dfb2-fe71-b500-ae16-001b81115147.jpg" alt="Model View">
+                </div>
+                <img src="./assets/img/product/8812805d-ce7e-8102-5394-001c885d693b.jpg" alt="Main Product Image"
+                    class="product-main">
             </div>
 
             <!-- Phần thông tin sản phẩm -->
             <div class="product-info">
-                <h1 class="product-title">Quần Jean The Original</h1>
+                <h1 class="product-title">Áo Thun Seventy Seven Trắng</h1>
 
                 <!-- đánh giá -->
                 <div class="rating">
@@ -307,14 +62,15 @@
 
                 <!-- giá tiền -->
                 <div class="product-prices">
-                    <span class="current-price">$120.00</span>
-                    <span class="old-price">$160.00</span>
-                    <span class="discount">-40%</span>
+                    <span class="current-price">143.000</span>
+                    <span class="old-price">207.000</span>
+                    <span class="discount">-30%</span>
                 </div>
 
                 <!-- mô tả nhanh -->
-                <p class="short-describe">Chất liệu vải vừa phải, không quá dày cũng không quá mỏng, mềm tay, co giãn.
-                    Túi đồng hồ nhỏ phía trước, bộ nút kim loại cá tính, bền chắc</p>
+                <p class="short-describe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ea, officiis
+                    maiores saepe dolores reprehenderit culpa molestiae expedita repellendus mollitia perspiciatis
+                    corrupti fuga, atque veniam in, possimus incidunt est tempore?</p>
 
                 <div class="divider"></div>
 
@@ -361,39 +117,270 @@
                 <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
             </div>
         </div>
+
+        <div class="divider"></div>
+        <div class="product-description">
+            <h2 class="title">Mô tả sản phẩm</h2>
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium obcaecati sunt a dolor suscipit ad voluptas maxime vitae harum assumenda neque consequuntur eaque ea, ratione impedit perspiciatis quidem! Est, alias!
+                Voluptates architecto ex asperiores voluptatum quasi excepturi recusandae laborum possimus esse autem ipsa modi tempora soluta quos culpa eligendi voluptatem, a error dolorem. Reiciendis quasi iusto fuga hic ipsum totam.
+                Unde minima laborum sequi hic? Asperiores fugit alias totam, nemo quas accusantium id doloremque quod soluta quae quibusdam quia at perferendis voluptate veniam voluptatum culpa esse, excepturi temporibus quo magnam!
+                Iure ab dicta tenetur, ducimus minima sequi, ipsum ea eos cumque mollitia reiciendis commodi, possimus distinctio non in officia incidunt similique temporibus voluptate fuga dolor sunt architecto perspiciatis. Cupiditate, dolorum?
+                Officia aliquam explicabo culpa! Quam iure ducimus nobis architecto amet similique saepe enim doloremque, modi vero, ipsam quibusdam nihil. Distinctio debitis doloribus temporibus laboriosam voluptate voluptates earum nemo soluta veniam?
+                Vero sint est architecto veritatis tempora? Temporibus fugit non, iste culpa modi doloremque quam quod sint, dolorum laborum consequatur odio, corrupti quas magnam autem dignissimos molestias alias esse atque minus!
+                Natus iusto, commodi earum est adipisci, quis repellendus tenetur itaque fugiat molestiae aperiam, esse quos sint? Natus nemo ratione labore perspiciatis possimus ab quas beatae, animi quae distinctio asperiores incidunt.
+                Labore dolorum quod at nobis hic libero vero? Voluptatem, in eveniet quo cum numquam ratione temporibus accusamus sequi placeat! Similique reprehenderit eligendi deserunt aliquam? Deleniti officiis at cumque accusantium commodi?
+                Repellat eligendi perspiciatis sunt. Dicta id, maiores, nihil harum accusamus exercitationem accusantium culpa cupiditate adipisci, eligendi autem doloremque repellat nisi nulla quo itaque suscipit! Modi autem distinctio officia ex dolorum.
+                Voluptatibus ea nihil porro dolore nulla dolores blanditiis sapiente perferendis explicabo ipsam! Magni mollitia iste doloremque, voluptatibus fugit ipsam, saepe recusandae minima veritatis nesciunt placeat maiores obcaecati, tempore blanditiis ad.
+            </p>
+            <button class="load-more-btn">Xem thêm</button>
+        </div>
+
+        <div class="divider"></div>
+        <div class="product-reviews">
+            <div class="heading">
+                <h2 class="title">Đánh giá sản phẩm</h2>
+                <div class="option-group">
+                    <i class="fa-solid fa-sliders"></i>
+                    <select class="sort">
+                        <option>Mới nhất</option>
+                        <option>Nổi bật nhất</option>
+
+                    </select>
+                    <div class="write-btn">Viết đánh giá</div>
+                </div>
+            </div>
+            <div class="product-review-container">
+                <div class="testimonial">
+                    <div class="heading">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                        </div>
+                        <button class="option">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+                    <h3 class="author-name">Name</h3>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, quisquam,
+                        atque eligendi impedit ex reiciendis quo sapiente, enim debitis nobis sit quam quae harum eos
+                        accusamus. Consequuntur eos iste veritatis!</p>
+                    <time datetime="2025-06-18" class="date">Posted on June 18, 2025</time>
+                </div>
+                <div class="testimonial">
+                    <div class="heading">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                        </div>
+                        <button class="option">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+                    <h3 class="author-name">Name</h3>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, quisquam,
+                        atque eligendi impedit ex reiciendis quo sapiente, enim debitis nobis sit quam quae harum eos
+                        accusamus. Consequuntur eos iste veritatis!</p>
+                    <time datetime="2025-06-18" class="date">Posted on June 18, 2025</time>
+                </div>
+                <div class="testimonial">
+                    <div class="heading">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                        </div>
+                        <button class="option">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+                    <h3 class="author-name">Name</h3>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, quisquam,
+                        atque eligendi impedit ex reiciendis quo sapiente, enim debitis nobis sit quam quae harum eos
+                        accusamus. Consequuntur eos iste veritatis!</p>
+                    <time datetime="2025-06-18" class="date">Posted on June 18, 2025</time>
+                </div>
+                <div class="testimonial">
+                    <div class="heading">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                        </div>
+                        <button class="option">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+                    <h3 class="author-name">Name</h3>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, quisquam,
+                        atque eligendi impedit ex reiciendis quo sapiente, enim debitis nobis sit quam quae harum eos
+                        accusamus. Consequuntur eos iste veritatis!</p>
+                    <time datetime="2025-06-18" class="date">Posted on June 18, 2025</time>
+                </div>
+                <div class="testimonial">
+                    <div class="heading">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                        </div>
+                        <button class="option">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+                    <h3 class="author-name">Name</h3>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, quisquam,
+                        atque eligendi impedit ex reiciendis quo sapiente, enim debitis nobis sit quam quae harum eos
+                        accusamus. Consequuntur eos iste veritatis!</p>
+                    <time datetime="2025-06-18" class="date">Posted on June 18, 2025</time>
+                </div>
+                <div class="testimonial">
+                    <div class="heading">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                        </div>
+                        <button class="option">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+                    <h3 class="author-name">Name</h3>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, quisquam,
+                        atque eligendi impedit ex reiciendis quo sapiente, enim debitis nobis sit quam quae harum eos
+                        accusamus. Consequuntur eos iste veritatis!</p>
+                    <time datetime="2025-06-18" class="date">Posted on June 18, 2025</time>
+                </div>
+            </div>
+
+            <button class="load-more-btn">Xem thêm đánh giá</button>
+
+        </div>
+
+        <div class="divider"></div>
+        <div class="related-product">
+            <h2 class="title">Các sản phẩm liên quan</h2>
+
+        </div>
     </div>
+
+    <div class="modal-review">
+        <div class="modal-review-container">
+            <h2 class="review-title">Đánh giá sản phẩm</h2>
+
+            <form id="reviewForm">
+                <div class="rating-section">
+                    <span class="rating-title">Chất lượng sản phẩm:</span>
+
+                    <div class="star-rating">
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1"><i class="fa-solid fa-star"></i></label>
+
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2"><i class="fa-solid fa-star"></i></label>
+
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3"><i class="fa-solid fa-star"></i></label>
+
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4"><i class="fa-solid fa-star"></i></label>
+
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5"><i class="fa-solid fa-star"></i></label>
+                    </div>
+
+                    <div class="rating-value" id="ratingValue">Bạn chưa chọn đánh giá</div>
+                </div>
+
+                <div class="review-content">
+                    <label for="reviewText" class="review-label">Nội dung đánh giá:</label>
+                    <textarea id="reviewText" class="review-textarea"
+                        placeholder="Hãy chia sẻ cảm nhận của bạn về sản phẩm..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" disabled>Gửi đánh giá</button>
+                
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi</h2>
+                <div class="form">
+                    <input type="text" placeholder="Điền địa chỉ email của bạn">
+                    <button>Đăng ký</button>
+                </div>
+            </div>
+            <div class="footer-body">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="./assets/img/Logo.png" alt="Logo" />
+                        <h2>AURENEST</h2>
+                    </div>
+                    <p class="tagline">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
+                        <li><a href="#">Quy định sử dụng</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Sản phẩm</h4>
+                    <ul>
+                        <li><a href="#">Quần</a></li>
+                        <li><a href="#">Áo</a></li>
+                        <li><a href="#">Giày</a></li>
+                        <li><a href="#">Nón</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Liên hệ</h4>
+                    <ul>
+                        <li>(+84)</li>
+                        <li>(+84)</li>
+                        <li>aurenest@gmail.com</li>
+                        <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025, AURENEST</div>
+        </div>
+    </footer>
+
+    <script src="./assets/javascripts/product-detail.js"></script>
 </body>
-<script>
-    // Thêm interactivity cho màu sắc
-    document.querySelectorAll('.color-option').forEach(option => {
-        option.addEventListener('click', function () {
-            document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
-            this.classList.add('selected');
-        });
-    });
-
-    // Thêm interactivity cho size
-    document.querySelectorAll('.size-option').forEach(option => {
-        option.addEventListener('click', function () {
-            document.querySelectorAll('.size-option').forEach(opt => opt.classList.remove('selected'));
-            this.classList.add('selected');
-        });
-    });
-
-    // Thêm interactivity cho số lượng
-    let quantity = 1;
-
-    function increase() {
-        quantity++;
-        document.getElementById('quantity').innerText = quantity;
-    }
-
-    function decrease() {
-        if (quantity > 1) {
-            quantity--;
-            document.getElementById('quantity').innerText = quantity;
-        }
-    }
-</script>
 
 </html>
