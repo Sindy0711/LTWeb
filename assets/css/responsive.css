@@ -23,19 +23,7 @@
     -ms-transition: background-color 0.3s ease;
     -o-transition: background-color 0.3s ease;
   }
-  .nav-links li:hover {
-    background-color: #165c46;
-    border: none;
-  }
-  .nav-links li a:hover,
-  .nav-links li a.active {
-    color: #fff;
-    border-bottom: none;
-  }
-  .nav-links li.active a{
-    color: white;
-    background-color: #165c46;
-  }
+
   .nav-links.active,
   .holder.active {
     display: flex;
@@ -48,5 +36,21 @@
 
   .navbar-container {
     position: relative;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .product-section {
+    width: 100%;
+    border-right: none;
+  }
+
+  .product-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }

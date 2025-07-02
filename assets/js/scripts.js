@@ -9,11 +9,26 @@ fetch("./assets/data/products.json")
       const card = document.createElement("div");
       card.className = "product-card";
       card.innerHTML = `
-          <div class='product-content'>
-            <img src="${product.image}" alt="${product.name}" />
-            <h4>${product.name}</h4>
-            <div class="price">₫${Number(product.price).toLocaleString()}</div>
-          </div>
+
+            
+            <div class="product-image">
+              <img src="${product.image}" alt="${product.name}" />
+            </div>
+            <div class="product-info">
+              <h4>${product.name}</h4>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="score">4.0/5</span>
+              </div>
+              <div class="price">
+                <span class="current-price">${product.price.toLocaleString()}₫</span>
+                ${
+                  product.oldPrice
+                    ? `<span class="old-price">${product.oldPrice.toLocaleString()}₫</span>`
+                    : ""
+                }
+              </div>
+            </div>  
         `;
       return card;
     };
@@ -87,7 +102,7 @@ function initInfiniteCarousel(carousel, visibleCount) {
   nextBtn.addEventListener("click", () => slideTo(index + visibleCount));
   prevBtn.addEventListener("click", () => slideTo(index - visibleCount));
 }
-const toggleBtn = document.querySelector("#menu-toggle");
+const toggleBtn = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const holder = document.querySelector(".holder");
 
@@ -96,9 +111,23 @@ toggleBtn.addEventListener("click", () => {
   holder.classList.toggle("active");
 });
 
-document.querySelectorAll(".nav-links a").forEach((link) => {
+document.querySelectorAll(".nav-link a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("active");
     holder.classList.remove("active");
   });
 });
+
+const userDropdown = document.querySelector(".user-dropdown");
+const dropdownMenu = document.querySelector(".dropdown-menu");
+
+if (userDropdown && dropdownMenu) {
+  userDropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+  });
+
+  document.addEventListener("click", () => {
+    dropdownMenu.classList.remove("show");
+  });
+}

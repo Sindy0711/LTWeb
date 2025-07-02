@@ -38,14 +38,14 @@
     <nav class="navbar">
       <div class="navbar-container container-fluid">
         <div class="logo">
-          <img src="" alt="" />
+          <img src="./assets/img/Logo.png" alt="Logo" />
           <span>AURENEST</span>
         </div>
         <ul class="nav-links">
-          <li class="active"><a href="/index.html">Trang chủ</a></li>
-          <li><a href="/about.html">Giới thiệu</a></li>
-          <li><a href="/products.html">Sản phẩm</a></li>
-          <li><a href="/contact.html">Liên hệ</a></li>
+          <li class="nav-link active"><a href="/index.html">Trang chủ</a></li>
+          <li class="nav-link"><a href="/about.html">Giới thiệu</a></li>
+          <li class="nav-link"><a href="/products.html">Sản phẩm</a></li>
+          <li class="nav-link"><a href="/contact.html">Liên hệ</a></li>
         </ul>
         <div class="holder">
           <div class="search-box">
@@ -66,12 +66,16 @@
               <span class="cart-badge" id="cart-count">0</span>
             </div>
 
-            <div class="action-icon">
+            <div class="action-icon user-dropdown">
               <i class="far fa-user"></i>
+              <div class="dropdown-menu">
+                <a href="authenticate.html">Đăng nhập</a>
+                <a href="authenticate.html">Đăng ký</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="menu-toggle" id="menu-toggle">
+        <div class="menu-toggle">
           <i class="fas fa-bars"></i>
         </div>
       </div>
@@ -118,25 +122,115 @@
       </section>
 
       <section class="best-sellers" id="best-sellers">
-        <div class="container">
-          <div class="header-best-sellers">
-            <h2>
-              <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
-              BEST SELLERS
-            </h2>
-            <div class="carousel-buttons">
-              <button class="carousel-btn top" id="prevBtn">&#8592;</button>
-              <button class="carousel-btn top" id="nextBtn">&#8594;</button>
-            </div>
+        <div class="container-best-sellers">
+          <h2 class="section-title">
+            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
+            BÁN CHẠY NHẤT
+          </h2>
+          <div class="carousel-buttons">
+            <button class="carousel-btn top" id="prevBtn">&#8592;</button>
+            <button class="carousel-btn top" id="nextBtn">&#8594;</button>
           </div>
-          <div class="body-best-sellers">
-            <div class="product-carousel" id="product-carousel">
-              <!-- JS sẽ render sản phẩm tại đây -->
-            </div>
+        </div>
+        <div class="body-best-sellers">
+          <div class="product-carousel" id="product-carousel">
+            <!-- JS sẽ render sản phẩm tại đây -->
           </div>
+        </div>
 
-          <div class="text-center">
-            <button class="btn-view-all">View All Products</button>
+        <div class="text-center">
+          <a href="products.html" class="btn-view-all">Xem Tất Cả Sản Phẩm</a>
+        </div>
+      </section>
+
+      <section class="blog-section">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
+            Blog & Tin tức
+          </h2>
+          <div class="blog-grid">
+            <div class="blog-card">
+              <img
+                src="https://source.unsplash.com/400x250/?fashion"
+                alt="Blog 1"
+              />
+              <div class="blog-content">
+                <h4>Xu hướng thời trang hè 2025</h4>
+                <p>
+                  Khám phá những xu hướng mới đang làm mưa làm gió mùa hè này.
+                </p>
+                <a href="#" class="read-more">Đọc thêm →</a>
+              </div>
+            </div>
+            <div class="blog-card">
+              <img
+                src="https://source.unsplash.com/400x250/?clothes"
+                alt="Blog 2"
+              />
+              <div class="blog-content">
+                <h4>Bí kíp phối đồ cá tính</h4>
+                <p>
+                  Mẹo phối đồ cho người mới bắt đầu mà bạn không nên bỏ qua.
+                </p>
+                <a href="#" class="read-more">Đọc thêm →</a>
+              </div>
+            </div>
+            <div class="blog-card">
+              <img
+                src="https://source.unsplash.com/400x250/?outfit"
+                alt="Blog 3"
+              />
+              <div class="blog-content">
+                <h4>Top 5 item must-have 2025</h4>
+                <p>Danh sách các món đồ bạn cần có trong tủ đồ năm nay.</p>
+                <a href="#" class="read-more">Đọc thêm →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gợi ý sản phẩm -->
+      <section class="recommend-section">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
+            GỢI Ý CHO BẠN
+          </h2>
+          <div class="recommend-grid">
+            <div class="product-card">
+              <img
+                src="https://source.unsplash.com/300x300/?jacket"
+                alt="Sản phẩm 1"
+              />
+              <h4>Áo khoác denim thời thượng</h4>
+              <div class="price">₫799,000</div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://source.unsplash.com/300x300/?tshirt"
+                alt="Sản phẩm 2"
+              />
+              <h4>Áo thun oversize basic</h4>
+              <div class="price">₫299,000</div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://source.unsplash.com/300x300/?shoes"
+                alt="Sản phẩm 3"
+              />
+              <h4>Giày sneaker trắng cổ điển</h4>
+              <div class="price">₫1,199,000</div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://source.unsplash.com/300x300/?hat"
+                alt="Sản phẩm 4"
+              />
+              <h4>Nón bucket thời trang</h4>
+              <div class="price">₫149,000</div>
+            </div>
           </div>
         </div>
       </section>
@@ -209,6 +303,6 @@
     </footer>
 
     <div id="toast-container"></div>
-    <script src="./assets/javascripts/scripts.js" type="module"></script>
+    <script src="./assets/js/scripts.js" type="module" defer></script>
   </body>
 </html>
