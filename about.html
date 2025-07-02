@@ -1,150 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aurenest | Giới thiệu</title>
-    <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
 
-    <!-- font icon -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurenest | Giới thiệu</title>
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
 
-    <link rel="stylesheet" href="./assets/css/style-about.css" />
-  </head>
+  <!-- font icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <body>
-    <div class="container">
+  <link rel="stylesheet" href="./assets/css/style-about.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
 
-        <div class="banner">
-            <div class="text-content">
-                <h1 class="text-heading fade-zoom">Giới thiệu</h1>
-                <p class="text-decription fade-zoom ">Aurenest là thương hiệu thời trang tiên phong trong việc kết hợp
-                    giữa
-                    nét thanh lịch hiện đại và chất riêng đậm cá tính. Với triết lý "Nơi phong cách tìm về bản ngã",
-                    Aurenest không chỉ tạo ra quần áo – chúng tôi tạo nên tuyên ngôn thời trang cho thế hệ mới.
-                </p>
-                <button class="learn-more-btn">Tìm hiểu thêm</button>
-            </div>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <div class="navbar-container container-fluid">
+      <div class="logo">
+        <img src="./assets/img/Logo.png" alt="Logo" />
+        <span>AURENEST</span>
+      </div>
+      <ul class="nav-links">
+        <li class="nav-link"><a href="/index.html">Trang chủ</a></li>
+        <li class="nav-link active"><a href="/about.html">Giới thiệu</a></li>
+        <li class="nav-link"><a href="/products.html">Sản phẩm</a></li>
+        <li class="nav-link"><a href="/contact.html">Liên hệ</a></li>
+      </ul>
+      <div class="holder">
+        <div class="search-box">
+          <input class="search-input" type="text" placeholder="Bạn đang tìm kiếm gì?" />
+          <i class="fas fa-search search-icon"></i>
         </div>
+        <div class="header-actions">
+          <div class="action-icon">
+            <i class="far fa-heart"></i>
+          </div>
 
-        <div class="content">
-            <div class="member-section">
-                <h2 class="text-heading fade-zoom">Đội ngũ của chúng tôi</h2>
-                <div class="member-list clearfix">
-                    <div class="member-item fade-bottom">
-                        <img src="./assets/img/avatar.jpg" alt="Thành viên 1" class="member-img fade-zoom">
-                        <h3 class="member-name fade-zoom">Nguyễn Văn A</h3>
-                        <p class="member-position fade-zoom">Giám đốc sáng tạo</p>
-                    </div>
-                    <div class="member-item fade-bottom">
-                        <img src="./assets/img/avatar.jpg" alt="Thành viên 2" class="member-img fade-zoom">
-                        <h3 class="member-name fade-zoom">Trần Thị B</h3>
-                        <p class="member-position fade-zoom">Trưởng phòng thiết kế</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+          <div class="action-icon cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cart-count">0</span>
+          </div>
 
-        <div class="form-section">
-            <div class="form">
-                <h2 class="form-title">Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi</h2>
-                <input type="email" placeholder="Email" class="form-control">
-                <button class="send-btn">Đăng ký</button>
+          <div class="action-icon user-dropdown">
+            <i class="far fa-user"></i>
+            <div class="dropdown-menu">
+              <a href="authenticate.html">Đăng nhập</a>
+              <a href="authenticate.html">Đăng ký</a>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Nội dung chính -->
+  <div class="about-container">
+    <div class="banner">
+      <div class="text-content">
+        <h1 class="text-heading fade-zoom">Giới thiệu</h1>
+        <p class="text-decription fade-zoom ">Aurenest là thương hiệu thời trang tiên phong trong việc kết hợp
+          giữa
+          nét thanh lịch hiện đại và chất riêng đậm cá tính. Với triết lý "Nơi phong cách tìm về bản ngã",
+          Aurenest không chỉ tạo ra quần áo – chúng tôi tạo nên tuyên ngôn thời trang cho thế hệ mới.
+        </p>
+        <button class="learn-more-btn">Tìm hiểu thêm</button>
+      </div>
     </div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-body clearfix">
-                <div class="footer-column">
-                    <div class="logo">
-                        <img src="./assets/img/Logo.png" alt="Logo Aurenest" />
-                        <h2>AURENEST</h2>
-                    </div>
-                    <p class="tagline">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
-                </div>
-
-          <div class="footer-column">
-            <h4>Chính sách</h4>
-            <ul>
-              <li><a href="#">Chính sách bảo mật</a></li>
-              <li><a href="#">Chính sách vận chuyển</a></li>
-              <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
-              <li><a href="#">Quy định sử dụng</a></li>
-            </ul>
+    <div class="content">
+      <div class="member-section">
+        <h2 class="text-heading fade-zoom">Đội ngũ của chúng tôi</h2>
+        <div class="member-list clearfix">
+          <div class="member-item fade-bottom">
+            <img src="./assets/img/avatar.jpg" alt="Thành viên 1" class="member-img fade-zoom">
+            <h3 class="member-name fade-zoom">Nguyễn Văn A</h3>
+            <p class="member-position fade-zoom">Giám đốc sáng tạo</p>
           </div>
-
-          <div class="footer-column">
-            <h4>Sản phẩm</h4>
-            <ul>
-              <li><a href="#">Quần</a></li>
-              <li><a href="#">Áo</a></li>
-              <li><a href="#">Giày</a></li>
-              <li><a href="#">Nón</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h4>Liên hệ</h4>
-            <ul>
-              <li>(+84)</li>
-              <li>(+84)</li>
-              <li>aurenest@gmail.com</li>
-              <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
-            </ul>
+          <div class="member-item fade-bottom">
+            <img src="./assets/img/avatar.jpg" alt="Thành viên 2" class="member-img fade-zoom">
+            <h3 class="member-name fade-zoom">Trần Thị B</h3>
+            <p class="member-position fade-zoom">Trưởng phòng thiết kế</p>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    <div class="form-section">
+      <div class="form">
+        <h2 class="form-title">Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi</h2>
+        <input type="email" placeholder="Email" class="form-control">
+        <button class="send-btn">Đăng ký</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-body clearfix">
+        <div class="footer-column">
+          <div class="logo">
+            <img src="./assets/img/Logo.png" alt="Logo Aurenest" />
+            <h2>AURENEST</h2>
+          </div>
+          <p class="tagline">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Chính sách</h4>
+          <ul>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Chính sách vận chuyển</a></li>
+            <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
+            <li><a href="#">Quy định sử dụng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Sản phẩm</h4>
+          <ul>
+            <li><a href="#">Quần</a></li>
+            <li><a href="#">Áo</a></li>
+            <li><a href="#">Giày</a></li>
+            <li><a href="#">Nón</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Liên hệ</h4>
+          <ul>
+            <li>(+84)</li>
+            <li>(+84)</li>
+            <li>aurenest@gmail.com</li>
+            <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
+          </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="copyright">&copy; 2025, AURENEST</div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">&copy; 2025, AURENEST</div>
+    </div>
+  </footer>
 
-    <script>
-      // animation
-      document.addEventListener("DOMContentLoaded", function () {
-        const sections = document.querySelectorAll('[class*="fade-"]');
+  <script>
+    // animation
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll('[class*="fade-"]');
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-              } else {
-                entry.target.classList.remove("active");
-              }
-            });
-          },
-          {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px",
-          }
-        );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            } else {
+              entry.target.classList.remove("active");
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
 
-        sections.forEach((section) => {
-          observer.observe(section);
-        });
+      sections.forEach((section) => {
+        observer.observe(section);
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

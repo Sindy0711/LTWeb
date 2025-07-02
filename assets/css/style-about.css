@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-.container {
+.about-container {
   width: 100%;
   max-width: 1550px;
   margin: 0 auto;
@@ -74,7 +74,7 @@ body {
     width: 100%;
     padding: 40px 10%;
     background-color: #fff;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .content .member-section {
@@ -177,7 +177,6 @@ body {
 
 /* footer */
 footer {
-  margin-top: 60px;
   background-color: #e6ecea;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -186,7 +185,7 @@ footer .footer-container {
     width: 90%;
     max-width: 1140px;
     margin: 0 auto;
-    padding-top: 5%;
+    padding-top: 10px;
     position: relative;
 }
 
