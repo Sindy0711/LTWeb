@@ -1,91 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Aurenest Menu</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Aurenest Menu</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <!-- Google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet" />
-  <!-- font icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+  </head>
 
-  <!-- Custom css -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/styles.css" />
-  <script type="module" src="script.js"></script>
-</head>
-
-<body>
-  <!-- Top banner -->
-  <div class="top-banner">
-    <i class="fas fa-bolt flash-icon"></i>
-    KHUYẾN MÃI SỐC! GIẢM GIÁ 70% TOÀN BỘ – CHỈ TRONG THỜI GIAN CÓ HẠN!
-    <a href=""> <i class="fas fa-shopping-bag bag-icon"></i> MUA NGAY! </a>
-  </div>
-  <!-- Navigation bar -->
-  <nav class="navbar">
-    <div class="navbar-container container-fluid">
-      <div class="logo">
-        <img src="" alt="" />
-        <span>AURENEST</span>
-      </div>
-
-      <ul class="nav-links">
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Sản phẩm</a></li>
-        <!-- <li><a href="#">Blog</a></li> -->
-        <li><a href="#">Liên hệ</a></li>
-      </ul>
-      <div class="holder">
-        <div class="search-box">
-          <input class="search-input" type="text" placeholder="Bạn đang tìm kiếm gì?" />
-          <i class="fas fa-search search-icon"></i>
+  <body>
+    <!-- Top banner -->
+    <div class="top-banner">
+      <i class="fas fa-bolt flash-icon"></i>
+      KHUYẾN MÃI SỐC! GIẢM GIÁ 70% TOÀN BỘ – CHỈ TRONG THỜI GIAN CÓ HẠN!
+      <a href=""> <i class="fas fa-shopping-bag bag-icon"></i> MUA NGAY! </a>
+    </div>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="navbar-container container-fluid">
+        <div class="logo">
+          <img src="./assets/img/Logo.png" alt="Logo" />
+          <span>AURENEST</span>
         </div>
-        <div class="header-actions">
-          <div class="action-icon">
-            <i class="far fa-heart"></i>
+        <ul class="nav-links">
+          <li class="nav-link active"><a href="/index.html">Trang chủ</a></li>
+          <li class="nav-link"><a href="/about.html">Giới thiệu</a></li>
+          <li class="nav-link"><a href="/products.html">Sản phẩm</a></li>
+          <li class="nav-link"><a href="/contact.html">Liên hệ</a></li>
+        </ul>
+        <div class="holder">
+          <div class="search-box">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Bạn đang tìm kiếm gì?"
+            />
+            <i class="fas fa-search search-icon"></i>
           </div>
+          <div class="header-actions">
+            <div class="action-icon">
+              <i class="far fa-heart"></i>
+            </div>
 
-          <div class="action-icon cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-badge" id="cart-count">0</span>
-          </div>
+            <div class="action-icon cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge" id="cart-count">0</span>
+            </div>
 
-          <div class="action-icon">
-            <i class="far fa-user"></i>
+            <div class="action-icon user-dropdown">
+              <i class="far fa-user"></i>
+              <div class="dropdown-menu">
+                <a href="authenticate.html">Đăng nhập</a>
+                <a href="authenticate.html">Đăng ký</a>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="menu-toggle" id="menu-toggle">
+        <div class="menu-toggle">
           <i class="fas fa-bars"></i>
         </div>
       </div>
-    </div>
-    </div>
-    <!-- hero -->
-    <section class="hero">
-      <div class="hero-container">
-        <div class="hero-text">
-          <h1>Khám phá Ưu đãi Mới Nhất</h1>
-          <p>
-            Giảm giá lên đến 50% cho tất cả sản phẩm mùa hè – chỉ có hôm nay!
-          </p>
-          <a href="#shop" class="btn-shop">Mua Ngay</a>
-        </div>
-        <!-- <div class="hero-image">
-          <img src="" alt="Sản phẩm nổi bật" />
-        </div> -->
-      </div>
-    </section>
+    </nav>
 
+    <main>
+      <!-- hero -->
+      <section class="hero">
+        <div class="hero-container">
+          <div class="hero-text">
+            <h1>TÌM KIẾM PHONG CÁCH BẢN THÂN</h1>
+            <p>
+              Giảm giá lên đến 50% cho tất cả sản phẩm mùa hè – chỉ có hôm nay!
+            </p>
+            <a href="#shop" class="btn-shop">Mua Ngay</a>
+            <div class="stats">
+              <div>
+                <h2>200+</h2>
+                <p>Thương hiệu quốc tế</p>
+              </div>
+              <div>
+                <h2>2,0000</h2>
+                <p>Sản phẩm chất lượng</p>
+              </div>
+              <div>
+                <h2>30,000</h2>
+                <p>Khách hàng</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-images">
+            <img
+              class="big-image"
+              src="https://i.pinimg.com/736x/38/94/e5/3894e5208988f88e33024fa9e50a011c.jpg"
+              alt="Sản phẩm nổi bật"
+            />
+            <img
+              class="small-image"
+              src="https://i.pinimg.com/736x/7f/66/30/7f6630154ea3fbd26b7819f6c1a133fa.jpg"
+              alt="Sản phẩm nổi bật"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="best-sellers" id="best-sellers">
+        <div class="container-best-sellers">
+          <h2 class="section-title">
+            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
+            BÁN CHẠY NHẤT
+          </h2>
+          <div class="carousel-buttons">
+            <button class="carousel-btn top" id="prevBtn">&#8592;</button>
+            <button class="carousel-btn top" id="nextBtn">&#8594;</button>
+          </div>
+        </div>
+        <div class="body-best-sellers">
+          <div class="product-carousel" id="product-carousel">
+            <!-- JS sẽ render sản phẩm tại đây -->
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="products.html" class="btn-view-all">Xem Tất Cả Sản Phẩm</a>
+        </div>
+      </section>
+
+      <section class="blog-section">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
+            Blog & Tin tức
+          </h2>
+          <div class="blog-grid">
+            <div class="blog-card">
+              <img
+                src="https://source.unsplash.com/400x250/?fashion"
+                alt="Blog 1"
+              />
+              <div class="blog-content">
+                <h4>Xu hướng thời trang hè 2025</h4>
+                <p>
+                  Khám phá những xu hướng mới đang làm mưa làm gió mùa hè này.
+                </p>
+                <a href="#" class="read-more">Đọc thêm →</a>
+              </div>
+            </div>
+            <div class="blog-card">
+              <img
+                src="https://source.unsplash.com/400x250/?clothes"
+                alt="Blog 2"
+              />
+              <div class="blog-content">
+                <h4>Bí kíp phối đồ cá tính</h4>
+                <p>
+                  Mẹo phối đồ cho người mới bắt đầu mà bạn không nên bỏ qua.
+                </p>
+                <a href="#" class="read-more">Đọc thêm →</a>
+              </div>
+            </div>
+            <div class="blog-card">
+              <img
+                src="https://source.unsplash.com/400x250/?outfit"
+                alt="Blog 3"
+              />
+              <div class="blog-content">
+                <h4>Top 5 item must-have 2025</h4>
+                <p>Danh sách các món đồ bạn cần có trong tủ đồ năm nay.</p>
+                <a href="#" class="read-more">Đọc thêm →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gợi ý sản phẩm -->
+      <section class="recommend-section">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
+            GỢI Ý CHO BẠN
+          </h2>
+          <div class="recommend-grid">
+            <div class="product-card">
+              <img
+                src="https://source.unsplash.com/300x300/?jacket"
+                alt="Sản phẩm 1"
+              />
+              <h4>Áo khoác denim thời thượng</h4>
+              <div class="price">₫799,000</div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://source.unsplash.com/300x300/?tshirt"
+                alt="Sản phẩm 2"
+              />
+              <h4>Áo thun oversize basic</h4>
+              <div class="price">₫299,000</div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://source.unsplash.com/300x300/?shoes"
+                alt="Sản phẩm 3"
+              />
+              <h4>Giày sneaker trắng cổ điển</h4>
+              <div class="price">₫1,199,000</div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://source.unsplash.com/300x300/?hat"
+                alt="Sản phẩm 4"
+              />
+              <h4>Nón bucket thời trang</h4>
+              <div class="price">₫149,000</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
         <div class="footer-container">
@@ -105,54 +254,52 @@
                     <p class="tagline clearfix">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
                 </div>
 
-                <div class="footer-column">
-                    <h4>Chính sách</h4>
-                    <ul>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                        <li><a href="#">Chính sách vận chuyển</a></li>
-                        <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
-                        <li><a href="#">Quy định sử dụng</a></li>
-                    </ul>
-                </div>
+          <div class="footer-column">
+            <h4>Chính sách</h4>
+            <ul>
+              <li><a href="#">Chính sách bảo mật</a></li>
+              <li><a href="#">Chính sách vận chuyển</a></li>
+              <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
+              <li><a href="#">Quy định sử dụng</a></li>
+            </ul>
+          </div>
 
-                <div class="footer-column">
-                    <h4>Sản phẩm</h4>
-                    <ul>
-                        <li><a href="#">Quần</a></li>
-                        <li><a href="#">Áo</a></li>
-                        <li><a href="#">Giày</a></li>
-                        <li><a href="#">Nón</a></li>
-                    </ul>
-                </div>
+          <div class="footer-column">
+            <h4>Sản phẩm</h4>
+            <ul>
+              <li><a href="#">Quần</a></li>
+              <li><a href="#">Áo</a></li>
+              <li><a href="#">Giày</a></li>
+              <li><a href="#">Nón</a></li>
+            </ul>
+          </div>
 
-                <div class="footer-column">
-                    <h4>Liên hệ</h4>
-                    <ul>
-                        <li>(+84)</li>
-                        <li>(+84)</li>
-                        <li>aurenest@gmail.com</li>
-                        <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
-                    </ul>
-                </div>
+          <div class="footer-column">
+            <h4>Liên hệ</h4>
+            <ul>
+              <li>(+84)</li>
+              <li>(+84)</li>
+              <li>aurenest@gmail.com</li>
+              <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
+            </ul>
+          </div>
 
-                <!-- <div class="clear"></div> -->
-            </div>
-
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            </div>
-
+          <!-- <div class="clear"></div> -->
         </div>
-        <div class="footer-bottom">
-            <div class="copyright">&copy; 2025, AURENEST</div>
+
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">&copy; 2025, AURENEST</div>
+      </div>
     </footer>
 
     <div id="toast-container"></div>
-    <script src="./assets/javascripts/scripts.js"></script>
-</body>
-
+    <script src="./assets/js/scripts.js" type="module" defer></script>
+  </body>
 </html>

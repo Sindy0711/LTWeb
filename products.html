@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURENES | Sản phẩm</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS tuỳ chỉnh -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container container-fluid">
+        <div class="logo">
+          <img src="./assets/img/Logo.png" alt="Logo" />
+          <span>AURENEST</span>
+        </div>
+        <ul class="nav-links">
+          <li class="nav-link"><a href="/index.html">Trang chủ</a></li>
+          <li class="nav-link"><a href="/about.html">Giới thiệu</a></li>
+          <li class="nav-link active"><a href="/products.html">Sản phẩm</a></li>
+          <li class="nav-link"><a href="/contact.html">Liên hệ</a></li>
+        </ul>
+        <div class="holder">
+          <div class="search-box">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Bạn đang tìm kiếm gì?"
+            />
+            <i class="fas fa-search search-icon"></i>
+          </div>
+          <div class="header-actions">
+            <div class="action-icon">
+              <i class="far fa-heart"></i>
+            </div>
+
+            <div class="action-icon cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge" id="cart-count">0</span>
+            </div>
+
+            <div class="action-icon">
+              <i class="far fa-user"></i>
+            </div>
+          </div>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- PHẦN CHÍNH -->
+    <main class="container">
+      <nav class="breadcrumb">
+        <a href="#">Trang chủ</a> &gt; <a href="#">Sản phẩm</a> &gt;
+        <span>Casual</span>
+      </nav>
+
+      <div class="wrapper">
+        <!-- THANH BÊN -->
+        <aside class="sidebar">
+          <h3>Bộ lọc</h3>
+
+          <div class="filter-group">
+            <h4>Danh mục</h4>
+            <ul>
+              <li><input type="checkbox" /> Áo thun</li>
+              <li><input type="checkbox" /> Sơ mi</li>
+              <li><input type="checkbox" /> Quần jeans</li>
+              <li><input type="checkbox" /> Áo hoodie</li>
+            </ul>
+          </div>
+
+          <div class="filter-group">
+            <h4>Giá</h4>
+            <input type="range" min="50" max="200" />
+            <div class="price-range">50$ - 200$</div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Màu sắc</h4>
+            <div class="color-options">
+              <span class="color" style="background-color: yellow"></span>
+              <span class="color" style="background-color: orange"></span>
+              <span class="color" style="background-color: red"></span>
+              <span class="color" style="background-color: blue"></span>
+              <span class="color" style="background-color: purple"></span>
+              <span class="color" style="background-color: pink"></span>
+              <span class="color" style="background-color: black"></span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Kích cỡ</h4>
+            <div class="sizes">
+              <button>XS</button>
+              <button>S</button>
+              <button>M</button>
+              <button>L</button>
+              <button>XL</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Phong cách</h4>
+            <ul>
+              <li><input type="checkbox" /> Thường ngày</li>
+              <li><input type="checkbox" /> Trang trọng</li>
+              <li><input type="checkbox" /> Tiệc tùng</li>
+              <li><input type="checkbox" /> Tập gym</li>
+            </ul>
+          </div>
+
+          <button class="apply-btn">Áp dụng bộ lọc</button>
+        </aside>
+
+        <!-- DANH SÁCH SẢN PHẨM -->
+        <section class="product-section">
+          <div class="product-header">
+            <h2>Casual</h2>
+            <p>
+              Hiển thị 1–12 trên 100 sản phẩm | Sắp xếp theo:
+              <strong>Phổ biến nhất</strong>
+            </p>
+          </div>
+
+          <div class="product-list">
+            <!-- Danh sách sản phẩm sẽ được sinh ra bằng JS -->
+          </div>
+
+          <!-- PHÂN TRANG -->
+          <div class="pagination">
+            <button>&lt; Trước</button>
+            <span class="pages">
+              <button class="active">1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>...</button>
+              <button>10</button>
+            </span>
+            <button>Tiếp &gt;</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="./assets/js/scripts.js"></script>
+  </body>
+</html>
