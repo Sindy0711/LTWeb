@@ -30,7 +30,6 @@
   <body>
     <!-- Top banner -->
     <div class="top-banner">
-      <i class="fas fa-bolt flash-icon"></i>
       KHUYẾN MÃI SỐC! GIẢM GIÁ 70% TOÀN BỘ – CHỈ TRONG THỜI GIAN CÓ HẠN!
       <a href=""> <i class="fas fa-shopping-bag bag-icon"></i> MUA NGAY! </a>
     </div>
@@ -92,146 +91,125 @@
             </p>
             <a href="#shop" class="btn-shop">Mua Ngay</a>
             <div class="stats">
-              <div>
+              <div class="stat-item">
                 <h2>200+</h2>
                 <p>Thương hiệu quốc tế</p>
               </div>
-              <div>
+              <div class="stat-item">
                 <h2>2,0000</h2>
                 <p>Sản phẩm chất lượng</p>
               </div>
-              <div>
+              <div class="stat-item">
                 <h2>30,000</h2>
                 <p>Khách hàng</p>
               </div>
             </div>
           </div>
-          <div class="hero-images">
-            <img
-              class="big-image"
-              src="https://i.pinimg.com/736x/38/94/e5/3894e5208988f88e33024fa9e50a011c.jpg"
-              alt="Sản phẩm nổi bật"
-            />
-            <img
-              class="small-image"
-              src="https://i.pinimg.com/736x/7f/66/30/7f6630154ea3fbd26b7819f6c1a133fa.jpg"
-              alt="Sản phẩm nổi bật"
-            />
+          <div class="hero-image-wrapper">
+            <div class="hero-image">
+              <img
+                src="https://i.pinimg.com/736x/38/94/e5/3894e5208988f88e33024fa9e50a011c.jpg"
+                alt="Hero Image"
+                class="big-image"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="best-sellers" id="best-sellers">
-        <div class="container-best-sellers">
+      <section class="section container" id="best-seller">
+        <div class="section-header">
           <h2 class="section-title">
             <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
             BÁN CHẠY NHẤT
           </h2>
-          <div class="carousel-buttons">
-            <button class="carousel-btn top" id="prevBtn">&#8592;</button>
-            <button class="carousel-btn top" id="nextBtn">&#8594;</button>
-          </div>
-        </div>
-        <div class="body-best-sellers">
-          <div class="product-carousel" id="product-carousel">
-            <!-- JS sẽ render sản phẩm tại đây -->
+          <div class="carousel-controls">
+            <button class="carousel-btn btn-prev" id="prevBtn">&#8592;</button>
+            <button class="carousel-btn btn-next" id="nextBtn">&#8594;</button>
           </div>
         </div>
 
-        <div class="text-center">
+        <div class="section-body">
+          <div class="carousel-wrapper">
+            <div class="carousel-track" id="product-carousel">
+              <!-- JS sẽ render sản phẩm tại đây -->
+            </div>
+          </div>
+        </div>
+
+        <div class="section-footer text-center">
           <a href="products.html" class="btn-view-all">Xem Tất Cả Sản Phẩm</a>
         </div>
       </section>
 
-      <section class="blog-section">
-        <div class="container">
+      <section class="section container" id="blog">
+        <div class="section-header">
           <h2 class="section-title">
             <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
-            Blog & Tin tức
+            Blog & Tin Tức
           </h2>
-          <div class="blog-grid">
-            <div class="blog-card">
-              <img
-                src="https://source.unsplash.com/400x250/?fashion"
-                alt="Blog 1"
-              />
-              <div class="blog-content">
-                <h4>Xu hướng thời trang hè 2025</h4>
-                <p>
-                  Khám phá những xu hướng mới đang làm mưa làm gió mùa hè này.
-                </p>
-                <a href="#" class="read-more">Đọc thêm →</a>
-              </div>
+        </div>
+
+        <div class="section-body blog-list">
+          <!-- Mỗi blog-card -->
+          <div class="blog-card">
+            <img
+              src="https://source.unsplash.com/400x250/?fashion"
+              alt="Blog 1"
+            />
+            <div class="blog-content">
+              <h4>Xu hướng thời trang hè 2025</h4>
+              <p>
+                Khám phá những xu hướng mới đang làm mưa làm gió mùa hè này.
+              </p>
+              <a href="#" class="read-more">Đọc thêm →</a>
             </div>
-            <div class="blog-card">
-              <img
-                src="https://source.unsplash.com/400x250/?clothes"
-                alt="Blog 2"
-              />
-              <div class="blog-content">
-                <h4>Bí kíp phối đồ cá tính</h4>
-                <p>
-                  Mẹo phối đồ cho người mới bắt đầu mà bạn không nên bỏ qua.
-                </p>
-                <a href="#" class="read-more">Đọc thêm →</a>
-              </div>
+          </div>
+
+          <div class="blog-card">
+            <img
+              src="https://source.unsplash.com/400x250/?clothes"
+              alt="Blog 2"
+            />
+            <div class="blog-content">
+              <h4>Bí kíp phối đồ cá tính</h4>
+              <p>Mẹo phối đồ cho người mới bắt đầu mà bạn không nên bỏ qua.</p>
+              <a href="#" class="read-more">Đọc thêm →</a>
             </div>
-            <div class="blog-card">
-              <img
-                src="https://source.unsplash.com/400x250/?outfit"
-                alt="Blog 3"
-              />
-              <div class="blog-content">
-                <h4>Top 5 item must-have 2025</h4>
-                <p>Danh sách các món đồ bạn cần có trong tủ đồ năm nay.</p>
-                <a href="#" class="read-more">Đọc thêm →</a>
-              </div>
+          </div>
+
+          <div class="blog-card">
+            <img
+              src="https://source.unsplash.com/400x250/?outfit"
+              alt="Blog 3"
+            />
+            <div class="blog-content">
+              <h4>Top 5 item must-have 2025</h4>
+              <p>Danh sách các món đồ bạn cần có trong tủ đồ năm nay.</p>
+              <a href="#" class="read-more">Đọc thêm →</a>
             </div>
           </div>
         </div>
+
+        <div class="section-footer text-center">
+          <a href="blog.html" class="btn-view-all">Xem Tất Cả Blog</a>
+        </div>
       </section>
 
-      <!-- Gợi ý sản phẩm -->
-      <section class="recommend-section">
-        <div class="container">
+      <section class="section container" id="recommend">
+        <div class="section-header">
           <h2 class="section-title">
             <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
-            GỢI Ý CHO BẠN
+            Gợi Ý Cho Bạn
           </h2>
-          <div class="recommend-grid">
-            <div class="product-card">
-              <img
-                src="https://source.unsplash.com/300x300/?jacket"
-                alt="Sản phẩm 1"
-              />
-              <h4>Áo khoác denim thời thượng</h4>
-              <div class="price">₫799,000</div>
-            </div>
-            <div class="product-card">
-              <img
-                src="https://source.unsplash.com/300x300/?tshirt"
-                alt="Sản phẩm 2"
-              />
-              <h4>Áo thun oversize basic</h4>
-              <div class="price">₫299,000</div>
-            </div>
-            <div class="product-card">
-              <img
-                src="https://source.unsplash.com/300x300/?shoes"
-                alt="Sản phẩm 3"
-              />
-              <h4>Giày sneaker trắng cổ điển</h4>
-              <div class="price">₫1,199,000</div>
-            </div>
-            <div class="product-card">
-              <img
-                src="https://source.unsplash.com/300x300/?hat"
-                alt="Sản phẩm 4"
-              />
-              <h4>Nón bucket thời trang</h4>
-              <div class="price">₫149,000</div>
-            </div>
-          </div>
+        </div>
+
+        <div class="section-body" id="recommend-carousel">
+          <!-- JS sẽ render sản phẩm tương tự Best Seller -->
+        </div>
+
+        <div class="section-footer text-center">
+          <a href="products.html" class="btn-view-all">Khám Phá Sản Phẩm</a>
         </div>
       </section>
     </main>
