@@ -23,14 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
         productCard.className = "shop-product-card";
 
         productCard.innerHTML = `
-          <img src="${product.image}" alt="${product.name}" />
-          <div class="shop-product-content">
-            <h4 class="shop-product-name">${product.name}</h4>
-            <div class="shop-product-rating">⭐ 4.5/5</div>
-            <div class="shop-product-price-group">
-              <span class="shop-price-new">${product.price}₫</span>
+          <a href="/product-detail.html" class="shop-product-link">
+            <img src="${product.image}" alt="${product.name}" />
+            <div class="shop-product-content">
+              <h4 class="shop-product-name">${product.name}</h4>
+              <div class="shop-product-rating">⭐ 4.5/5</div>
+              <div class="shop-product-price-group">
+                <span class="shop-price-new">${product.price}₫</span>
+              </div>
             </div>
-          </div>
+          </a>
         `;
 
         container.appendChild(productCard);

@@ -100,7 +100,7 @@ a {
   overflow: visible;
   position: sticky;
   top: 0;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .navbar-container {
@@ -119,6 +119,11 @@ a {
   height: 40px;
   vertical-align: middle;
   margin-right: 8px;
+}
+.logo span {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--primary-color);
 }
 
 /* NAV LINKS */
@@ -423,6 +428,7 @@ a {
 .blog-card {
   display: inline-block;
   vertical-align: top;
+  height: 400px;
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   background-color: var(--card-bg);
@@ -753,53 +759,36 @@ a {
 
 /* Pagination */
 .shop-pagination {
-  clear: both;
   text-align: center;
   margin-top: 30px;
+  font-size: 16px;
 }
 
 .shop-pagination button {
-  margin: 0 5px;
-  padding: 6px 12px;
-  border: 1px solid var(--border-color);
-  background: white;
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-.shop-pagination .active {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-/* PAGINATION */
-.pagination {
-  text-align: center;
-}
-.pages {
-  display: inline-block;
-}
-.pagination button {
-  padding: 6px 12px;
-  border: 1px solid var(--border-color);
   background-color: white;
   color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
 }
 
-.pagination button:hover {
+.shop-pagination button:hover {
+  background-color: var(--primary-hover);
+  color: white;
+  border-color: var(--primary-hover);
+}
+
+.shop-pagination .pages button {
+  display: inline-block;
+}
+
+.shop-pagination button.active {
   background-color: var(--primary-color);
   color: white;
+  border-color: var(--primary-color);
 }
-
-.pages button.active {
-  background-color: var(--primary-color);
-  color: white;
-  font-weight: bold;
-}
-
 /* FOOTER */
 .footer {
   margin-top: 60px;
