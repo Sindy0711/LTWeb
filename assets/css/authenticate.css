@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f6f5f7;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+h1 {
+  margin-bottom: 20px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.btn {
+  width: 100%;
+  background-color: #d64541;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #c23733;
+}
+.or {
+  margin: 16px 0;
+  font-size: 14px;
+  color: #777;
+}
+.google-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.google-btn img {
+  width: 18px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.footer-text {
+  margin-top: 20px;
+  font-size: 13px;
+  color: gray;
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+h1 {
+  margin-bottom: 20px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.btn {
+  width: 100%;
+  background-color: #165c46;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #124a38;
+}
+.form-options {
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.form-options label {
+  display: inline-block;
+}
+.footer-text {
+  margin-top: 20px;
+  font-size: 13px;
+  color: gray;
+}
