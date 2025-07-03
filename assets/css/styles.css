@@ -98,8 +98,9 @@ a {
   border-bottom: 1px solid var(--border-color);
   padding: 10px 30px;
   overflow: visible;
-  position: relative;
-  z-index: 1;
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
 }
 
 .navbar-container {
