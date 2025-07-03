@@ -117,120 +117,204 @@
         </div>
       </section>
 
-      <section class="section container" id="best-seller">
-        <div class="section-header">
-          <h2 class="section-title">
-            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
-            BÁN CHẠY NHẤT
-          </h2>
-          <div class="carousel-controls">
-            <button class="carousel-btn btn-prev" id="prevBtn">&#8592;</button>
-            <button class="carousel-btn btn-next" id="nextBtn">&#8594;</button>
+      <section class="product-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">
+              <i
+                class="fas fa-minus fa-rotate-90"
+                style="color: var(--secondary-color)"
+              ></i>
+              Gợi Ý Hôm Nay
+            </h2>
+            <div class="carousel-controls">
+              <button class="carousel-btn" onclick="prevSlide()">
+                &#10094;
+              </button>
+              <button class="carousel-btn" onclick="nextSlide()">
+                &#10095;
+              </button>
+            </div>
           </div>
-        </div>
 
-        <div class="section-body">
-          <div class="carousel-wrapper">
-            <div class="carousel-track" id="product-carousel">
-              <!-- JS sẽ render sản phẩm tại đây -->
+          <div class="carousel-box">
+            <div class="carousel-track" id="productTrack">
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/img/1.avif" alt="Áo thun" />
+                </div>
+                <div class="product-info">
+                  <div class="product-name">Áo Thun Trơn Basic</div>
+                  <div class="product-price">149,000₫</div>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/img/1.avif" alt="Áo thun" />
+                </div>
+                <div class="product-info">
+                  <div class="product-name">Áo Thun Trơn Basic</div>
+                  <div class="product-price">149,000₫</div>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/img/1.avif" alt="Áo thun" />
+                </div>
+                <div class="product-info">
+                  <div class="product-name">Áo Thun Trơn Basic</div>
+                  <div class="product-price">149,000₫</div>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/img/1.avif" alt="Áo thun" />
+                </div>
+                <div class="product-info">
+                  <div class="product-name">Áo Thun Trơn Basic</div>
+                  <div class="product-price">149,000₫</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="section-footer text-center">
-          <a href="products.html" class="btn-view-all">Xem Tất Cả Sản Phẩm</a>
-        </div>
       </section>
 
-      <section class="section container" id="blog">
-        <div class="section-header">
+      <section class="blog-section">
+        <div class="container">
           <h2 class="section-title">
-            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
+            <i class="fas fa-minus fa-rotate-90" style="color: #f04e30"></i>
             Blog & Tin Tức
           </h2>
-        </div>
 
-        <div class="section-body blog-list">
-          <!-- Mỗi blog-card -->
-          <div class="blog-card">
-            <img
-              src="https://source.unsplash.com/400x250/?fashion"
-              alt="Blog 1"
-            />
-            <div class="blog-content">
-              <h4>Xu hướng thời trang hè 2025</h4>
-              <p>
-                Khám phá những xu hướng mới đang làm mưa làm gió mùa hè này.
-              </p>
-              <a href="#" class="read-more">Đọc thêm →</a>
+          <div class="blog-list">
+            <div class="blog-card">
+              <div class="blog-image">
+                <img src="./assets/img/1.avif" alt="Blog 1" />
+              </div>
+              <div class="blog-content">
+                <h3 class="blog-title">5 Mẹo Phối Đồ Đơn Giản Mà Cực Chất</h3>
+                <p class="blog-desc">
+                  Khám phá cách phối đồ với áo thun và quần jean mà ai cũng có
+                  thể làm được.
+                </p>
+                <a href="#" class="blog-readmore">Đọc thêm →</a>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <div class="blog-image">
+                <img src="./assets/img/1.avif" alt="Blog 2" />
+              </div>
+              <div class="blog-content">
+                <h3 class="blog-title">Xu Hướng Thời Trang Hè 2025</h3>
+                <p class="blog-desc">
+                  Tìm hiểu những xu hướng đang được giới trẻ yêu thích trong mùa
+                  hè này.
+                </p>
+                <a href="#" class="blog-readmore">Đọc thêm →</a>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <div class="blog-image">
+                <img src="./assets/img/1.avif" alt="Blog 3" />
+              </div>
+              <div class="blog-content">
+                <h3 class="blog-title">Phong Cách Unisex Đang Trở Lại</h3>
+                <p class="blog-desc">
+                  Unisex tiếp tục là làn sóng mạnh mẽ trong giới trẻ với nhiều
+                  thiết kế độc đáo.
+                </p>
+                <a href="#" class="blog-readmore">Đọc thêm →</a>
+              </div>
             </div>
           </div>
-
-          <div class="blog-card">
-            <img
-              src="https://source.unsplash.com/400x250/?clothes"
-              alt="Blog 2"
-            />
-            <div class="blog-content">
-              <h4>Bí kíp phối đồ cá tính</h4>
-              <p>Mẹo phối đồ cho người mới bắt đầu mà bạn không nên bỏ qua.</p>
-              <a href="#" class="read-more">Đọc thêm →</a>
-            </div>
-          </div>
-
-          <div class="blog-card">
-            <img
-              src="https://source.unsplash.com/400x250/?outfit"
-              alt="Blog 3"
-            />
-            <div class="blog-content">
-              <h4>Top 5 item must-have 2025</h4>
-              <p>Danh sách các món đồ bạn cần có trong tủ đồ năm nay.</p>
-              <a href="#" class="read-more">Đọc thêm →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-footer text-center">
-          <a href="blog.html" class="btn-view-all">Xem Tất Cả Blog</a>
         </div>
       </section>
 
-      <section class="section container" id="recommend">
-        <div class="section-header">
+      <section class="new-arrivals-section">
+        <div class="container">
           <h2 class="section-title">
-            <i class="fas fa-minus fa-rotate-90" style="color: #d63b3b"></i>
-            Gợi Ý Cho Bạn
+            <i class="fas fa-minus fa-rotate-90" style="color: #f04e30"></i>
+            SẢN PHẨM MỚI VỀ
           </h2>
-        </div>
 
-        <div class="section-body" id="recommend-carousel">
-          <!-- JS sẽ render sản phẩm tương tự Best Seller -->
-        </div>
+          <div class="new-arrivals-list">
+            <div class="new-arrival-card">
+              <img src="./assets/img/1.avif" alt="T-shirt" />
+              <div class="arrival-content">
+                <h4 class="arrival-name">Áo Thun Cổ Tròn</h4>
+                <div class="arrival-rating">⭐ 4.5/5</div>
+                <div class="arrival-price-group">
+                  <span class="arrival-price-new">120,000₫</span>
+                </div>
+              </div>
+            </div>
 
-        <div class="section-footer text-center">
-          <a href="products.html" class="btn-view-all">Khám Phá Sản Phẩm</a>
+            <div class="new-arrival-card">
+              <img src="./assets/img/1.avif" alt="T-shirt" />
+              <div class="arrival-content">
+                <h4 class="arrival-name">Áo Thun Cổ Tròn</h4>
+                <div class="arrival-rating">⭐ 4.5/5</div>
+                <div class="arrival-price-group">
+                  <span class="arrival-price-new">120,000₫</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="new-arrival-card">
+              <img src="./assets/img/1.avif" alt="T-shirt" />
+              <div class="arrival-content">
+                <h4 class="arrival-name">Áo Thun Cổ Tròn</h4>
+                <div class="arrival-rating">⭐ 4.5/5</div>
+                <div class="arrival-price-group">
+                  <span class="arrival-price-new">120,000₫</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="new-arrival-card">
+              <img src="./assets/img/1.avif" alt="T-shirt" />
+              <div class="arrival-content">
+                <h4 class="arrival-name">Áo Thun Cổ Tròn</h4>
+                <div class="arrival-rating">⭐ 4.5/5</div>
+                <div class="arrival-price-group">
+                  <span class="arrival-price-new">120,000₫</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="view-all-wrapper">
+            <a href="product.html" class="btn-view-all">Xem tất cả</a>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h2 class="title">Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi</h2>
-                <div class="form">
-                    <input type="text" placeholder="Điền địa chỉ email của bạn">
-                    <button>Đăng ký</button>
-                </div>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="title">
+            Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi
+          </h2>
+          <div class="form">
+            <input type="text" placeholder="Điền địa chỉ email của bạn" />
+            <button>Đăng ký</button>
+          </div>
+        </div>
+        <div class="footer-body clearfix">
+          <div class="footer-column">
+            <div class="logo">
+              <img src="./assets/img/Logo.png" alt="Logo" />
+              <h2>AURENEST</h2>
             </div>
-            <div class="footer-body clearfix">
-                <div class="footer-column ">
-                    <div class="logo">
-                        <img src="./assets/img/Logo.png" alt="Logo" />
-                        <h2>AURENEST</h2>
-                    </div>
-                    <p class="tagline clearfix">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
-                </div>
+            <p class="tagline clearfix">
+              Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác
+              biệt.
+            </p>
+          </div>
 
           <div class="footer-column">
             <h4>Chính sách</h4>

@@ -33,9 +33,9 @@
           <span>AURENEST</span>
         </div>
         <ul class="nav-links">
-          <li class="nav-link"><a href="/index.html">Trang chủ</a></li>
+          <li class="nav-link active"><a href="/index.html">Trang chủ</a></li>
           <li class="nav-link"><a href="/about.html">Giới thiệu</a></li>
-          <li class="nav-link active"><a href="/products.html">Sản phẩm</a></li>
+          <li class="nav-link"><a href="/products.html">Sản phẩm</a></li>
           <li class="nav-link"><a href="/contact.html">Liên hệ</a></li>
         </ul>
         <div class="holder">
@@ -57,129 +57,187 @@
               <span class="cart-badge" id="cart-count">0</span>
             </div>
 
-            <div class="action-icon">
+            <div class="action-icon user-dropdown">
               <i class="far fa-user"></i>
+              <div class="dropdown-menu">
+                <a href="authenticate.html">Đăng nhập</a>
+                <a href="authenticate.html">Đăng ký</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="menu-toggle" id="menu-toggle">
+        <div class="menu-toggle">
           <i class="fas fa-bars"></i>
         </div>
       </div>
     </nav>
 
     <!-- PHẦN CHÍNH -->
-    <main class="container">
-      <nav class="breadcrumb">
-        <a href="#">Trang chủ</a> &gt; <a href="#">Sản phẩm</a> &gt;
-        <span>Casual</span>
-      </nav>
-
-      <div class="wrapper">
-        <!-- THANH BÊN -->
-        <aside class="sidebar">
-          <h3>Bộ lọc</h3>
-
-          <div class="filter-group">
-            <h4>Danh mục</h4>
-            <ul>
-              <li><input type="checkbox" /> Áo thun</li>
-              <li><input type="checkbox" /> Sơ mi</li>
-              <li><input type="checkbox" /> Quần jeans</li>
-              <li><input type="checkbox" /> Áo hoodie</li>
-            </ul>
-          </div>
-
-          <div class="filter-group">
-            <h4>Giá</h4>
-            <input type="range" min="50" max="200" />
-            <div class="price-range">50$ - 200$</div>
-          </div>
-
-          <div class="filter-group">
-            <h4>Màu sắc</h4>
-            <div class="color-options">
-              <span class="color" style="background-color: yellow"></span>
-              <span class="color" style="background-color: orange"></span>
-              <span class="color" style="background-color: red"></span>
-              <span class="color" style="background-color: blue"></span>
-              <span class="color" style="background-color: purple"></span>
-              <span class="color" style="background-color: pink"></span>
-              <span class="color" style="background-color: black"></span>
-            </div>
-          </div>
-
-          <div class="filter-group">
-            <h4>Kích cỡ</h4>
-            <div class="sizes">
-              <button>XS</button>
-              <button>S</button>
-              <button>M</button>
-              <button>L</button>
-              <button>XL</button>
-            </div>
-          </div>
-
-          <div class="filter-group">
-            <h4>Phong cách</h4>
-            <ul>
-              <li><input type="checkbox" /> Thường ngày</li>
-              <li><input type="checkbox" /> Trang trọng</li>
-              <li><input type="checkbox" /> Tiệc tùng</li>
-              <li><input type="checkbox" /> Tập gym</li>
-            </ul>
-          </div>
-
-          <button class="apply-btn">Áp dụng bộ lọc</button>
-        </aside>
-
-        <!-- DANH SÁCH SẢN PHẨM -->
-        <section class="product-section">
-          <div class="product-header">
-            <h2>Casual</h2>
-            <p>
-              Hiển thị 1–12 trên 100 sản phẩm | Sắp xếp theo:
-              <strong>Phổ biến nhất</strong>
-            </p>
-          </div>
-
-          <div class="product-list">
-            <!-- Danh sách sản phẩm sẽ được sinh ra bằng JS -->
-          </div>
-
-          <!-- PHÂN TRANG -->
-          <div class="pagination">
-            <button>&lt; Trước</button>
-            <span class="pages">
-              <button class="active">1</button>
-              <button>2</button>
-              <button>3</button>
-              <button>...</button>
-              <button>10</button>
-            </span>
-            <button>Tiếp &gt;</button>
-          </div>
-        </section>
+    <main class="shop-wrapper container">
+      <div class="breadcrumb">
+        <a href="" class="breadcrumb-home">Trang chủ</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="" class="breadcrumb-current">Sản phẩm</a>
+        <!-- <span class="breadcrumb-separator">/</span> -->
+        <!-- <a href="" class="breadcrumb-category">Pants</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="" class="breadcrumb-current">Áo thun</a> -->
       </div>
+
+      <!-- SIDEBAR -->
+      <aside class="shop-sidebar">
+        <h3>Bộ lọc</h3>
+
+        <div class="shop-filter-group">
+          <h4>Danh mục</h4>
+          <ul>
+            <li><input type="checkbox" /> Áo thun</li>
+            <li><input type="checkbox" /> Sơ mi</li>
+            <li><input type="checkbox" /> Quần jeans</li>
+            <li><input type="checkbox" /> Áo hoodie</li>
+          </ul>
+        </div>
+
+        <div class="shop-filter-group">
+          <h4>Giá</h4>
+          <input type="range" min="50" max="200" />
+          <div class="price-range">50$ - 200$</div>
+        </div>
+
+        <div class="shop-filter-group">
+          <h4>Màu sắc</h4>
+          <div class="shop-color-options">
+            <span class="shop-color" style="background-color: yellow"></span>
+            <span class="shop-color" style="background-color: orange"></span>
+            <span class="shop-color" style="background-color: red"></span>
+            <span class="shop-color" style="background-color: blue"></span>
+            <span class="shop-color" style="background-color: purple"></span>
+            <span class="shop-color" style="background-color: pink"></span>
+            <span class="shop-color" style="background-color: black"></span>
+          </div>
+        </div>
+
+        <div class="shop-filter-group">
+          <h4>Kích cỡ</h4>
+          <div class="shop-sizes">
+            <button>XS</button>
+            <button>S</button>
+            <button>M</button>
+            <button>L</button>
+            <button>XL</button>
+          </div>
+        </div>
+
+        <div class="shop-filter-group">
+          <h4>Phong cách</h4>
+          <ul>
+            <li><input type="checkbox" /> Thường ngày</li>
+            <li><input type="checkbox" /> Trang trọng</li>
+            <li><input type="checkbox" /> Tiệc tùng</li>
+            <li><input type="checkbox" /> Tập gym</li>
+          </ul>
+        </div>
+
+        <button class="shop-apply-btn">Áp dụng bộ lọc</button>
+      </aside>
+
+      <!-- PRODUCT SECTION -->
+      <section class="shop-product-section">
+        <div class="shop-product-header">
+          <h2>Casual</h2>
+          <p>
+            Hiển thị 1–12 trên 100 sản phẩm | Sắp xếp theo:
+            <strong>Phổ biến nhất</strong>
+          </p>
+        </div>
+
+        <div class="shop-product-list">
+          <div class="shop-product-card">
+            <img src="./assets/img/1.avif" alt="T-shirt" />
+            <div class="shop-product-content">
+              <h4 class="shop-product-name">Áo Thun Cổ Tròn</h4>
+              <div class="shop-product-rating">⭐ 4.5/5</div>
+              <div class="shop-product-price-group">
+                <span class="shop-price-new">120,000₫</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shop-product-card">
+            <img src="./assets/img/1.avif" alt="Jeans" />
+            <div class="shop-product-content">
+              <h4 class="shop-product-name">Quần Jean Skinny</h4>
+              <div class="shop-product-rating">⭐ 3.5/5</div>
+              <div class="shop-product-price-group">
+                <span class="shop-price-new">240,000₫</span>
+                <span class="shop-price-old">260,000₫</span>
+                <span class="shop-discount">-20%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shop-product-card">
+            <img src="./assets/img/1.avif" alt="Shirt" />
+            <div class="shop-product-content">
+              <h4 class="shop-product-name">Sơ Mi Kẻ Caro</h4>
+              <div class="shop-product-rating">⭐ 4.5/5</div>
+              <div class="shop-product-price-group">
+                <span class="shop-price-new">180,000₫</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shop-product-card">
+            <img src="./assets/img/1.avif" alt="Striped T-shirt" />
+            <div class="shop-product-content">
+              <h4 class="shop-product-name">Áo Thun Kẻ Tay Raglan</h4>
+              <div class="shop-product-rating">⭐ 4.5/5</div>
+              <div class="shop-product-price-group">
+                <span class="shop-price-new">130,000₫</span>
+                <span class="shop-price-old">160,000₫</span>
+                <span class="shop-discount">-30%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="shop-pagination">
+          <button>&lt; Trước</button>
+          <span class="pages">
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>...</button>
+            <button>10</button>
+          </span>
+          <button>Tiếp &gt;</button>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h2 class="title">Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi</h2>
-                <div class="form">
-                    <input type="text" placeholder="Điền địa chỉ email của bạn">
-                    <button>Đăng ký</button>
-                </div>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="title">
+            Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi
+          </h2>
+          <div class="form">
+            <input type="text" placeholder="Điền địa chỉ email của bạn" />
+            <button>Đăng ký</button>
+          </div>
+        </div>
+        <div class="footer-body clearfix">
+          <div class="footer-column">
+            <div class="logo">
+              <img src="./assets/img/Logo.png" alt="Logo" />
+              <h2>AURENEST</h2>
             </div>
-            <div class="footer-body clearfix">
-                <div class="footer-column ">
-                    <div class="logo">
-                        <img src="./assets/img/Logo.png" alt="Logo" />
-                        <h2>AURENEST</h2>
-                    </div>
-                    <p class="tagline clearfix">Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác biệt.</p>
-                </div>
+            <p class="tagline clearfix">
+              Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác
+              biệt.
+            </p>
+          </div>
 
           <div class="footer-column">
             <h4>Chính sách</h4>
@@ -210,7 +268,6 @@
               <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
             </ul>
           </div>
-
         </div>
 
         <div class="social-icons">

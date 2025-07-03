@@ -8,7 +8,6 @@ Một giao diện website thương mại điện tử hiện đại, được l�
 - 🗂️ Hiển thị danh sách sản phẩm theo danh mục
 - 🛒 Lưu và hiển thị giỏ hàng bằng Local Storage
 - 🔍 Bộ lọc sản phẩm (theo tên, loại, giá,...)
-- 📱 Responsive: Hiển thị tốt trên cả desktop và mobile
 - 🧩 Modular & dễ mở rộng cho các chức năng tương lai (đăng nhập, đặt hàng,...)
 
 ## 🧱 Công nghệ sử dụng
