@@ -16,7 +16,7 @@ body {
     width: 90%;
     max-width: 1140px;
     margin: 0 auto;
-    padding: 10px 0 100px;
+    padding: 10px 0;
 }
 
 .clearfix::after {
