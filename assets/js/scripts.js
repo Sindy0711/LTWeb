@@ -31,9 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="shop-product-price-group">
                 <span class="shop-price-new">${product.price}₫</span>
               </div>
+              <div class="shop-product-action">
+                    <button class="add-to-cart-btn" data-id="${product.id}">🛒</button>
+              </div>
             </div>
           </a>
-        `;
+            `;
 
         container.appendChild(productCard);
       });
