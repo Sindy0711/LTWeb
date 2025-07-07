@@ -52,7 +52,7 @@
               <i class="far fa-heart"></i>
             </div>
 
-            <div class="action-icon cart-icon">
+            <div class="action-icon cart-icon" id="open-cart">
               <i class="fas fa-shopping-cart"></i>
               <span class="cart-badge" id="cart-count">0</span>
             </div>
@@ -144,7 +144,7 @@
       <!-- PRODUCT SECTION -->
       <section class="shop-product-section" style="padding-bottom: 60px">
         <div class="shop-product-header">
-          <h2>Casual</h2>
+          <h2>Thường ngày</h2>
           <p>
             Hiển thị 1–12 trên 100 sản phẩm | Sắp xếp theo:
             <strong>Phổ biến nhất</strong>
@@ -161,112 +161,10 @@
                 <span class="shop-price-new">120,000₫</span>
               </div>
             </div>
-          </div>
-
-          <div class="shop-product-card">
-            <img src="./assets/img/1.avif" alt="Jeans" />
-            <div class="shop-product-content">
-              <h4 class="shop-product-name">Quần Jean Skinny</h4>
-              <div class="shop-product-rating">⭐ 3.5/5</div>
-              <div class="shop-product-price-group">
-                <span class="shop-price-new">240,000₫</span>
-                <span class="shop-price-old">260,000₫</span>
-                <span class="shop-discount">-20%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="shop-product-card">
-            <img src="./assets/img/1.avif" alt="Shirt" />
-            <div class="shop-product-content">
-              <h4 class="shop-product-name">Sơ Mi Kẻ Caro</h4>
-              <div class="shop-product-rating">⭐ 4.5/5</div>
-              <div class="shop-product-price-group">
-                <span class="shop-price-new">180,000₫</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="shop-product-card">
-            <img src="./assets/img/1.avif" alt="Striped T-shirt" />
-            <div class="shop-product-content">
-              <h4 class="shop-product-name">Áo Thun Kẻ Tay Raglan</h4>
-              <div class="shop-product-rating">⭐ 4.5/5</div>
-              <div class="shop-product-price-group">
-                <span class="shop-price-new">130,000₫</span>
-                <span class="shop-price-old">160,000₫</span>
-                <span class="shop-discount">-30%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="shop-product-card">
-            <img src="./assets/img/1.avif" alt="Striped T-shirt" />
-            <div class="shop-product-content">
-              <h4 class="shop-product-name">Áo Thun Kẻ Tay Raglan</h4>
-              <div class="shop-product-rating">⭐ 4.5/5</div>
-              <div class="shop-product-price-group">
-                <span class="shop-price-new">130,000₫</span>
-                <span class="shop-price-old">160,000₫</span>
-                <span class="shop-discount">-30%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="shop-product-card">
-            <img src="./assets/img/1.avif" alt="Striped T-shirt" />
-            <div class="shop-product-content">
-              <h4 class="shop-product-name">Áo Thun Kẻ Tay Raglan</h4>
-              <div class="shop-product-rating">⭐ 4.5/5</div>
-              <div class="shop-product-price-group">
-                <span class="shop-price-new">130,000₫</span>
-                <span class="shop-price-old">160,000₫</span>
-                <span class="shop-discount">-30%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="shop-product-card">
-            <img src="./assets/img/1.avif" alt="Striped T-shirt" />
-            <div class="shop-product-content">
-              <h4 class="shop-product-name">Áo Thun Kẻ Tay Raglan</h4>
-              <div class="shop-product-rating">⭐ 4.5/5</div>
-              <div class="shop-product-price-group">
-                <span class="shop-price-new">130,000₫</span>
-                <span class="shop-price-old">160,000₫</span>
-                <span class="shop-discount">-30%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="shop-product-card">
-            <img src="./assets/img/1.avif" alt="Striped T-shirt" />
-            <div class="shop-product-content">
-              <h4 class="shop-product-name">Áo Thun Kẻ Tay Raglan</h4>
-              <div class="shop-product-rating">⭐ 4.5/5</div>
-              <div class="shop-product-price-group">
-                <span class="shop-price-new">130,000₫</span>
-                <span class="shop-price-old">160,000₫</span>
-                <span class="shop-discount">-30%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="shop-product-card">
-            <img src="./assets/img/1.avif" alt="Striped T-shirt" />
-            <div class="shop-product-content">
-              <h4 class="shop-product-name">Áo Thun Kẻ Tay Raglan</h4>
-              <div class="shop-product-rating">⭐ 4.5/5</div>
-              <div class="shop-product-price-group">
-                <span class="shop-price-new">130,000₫</span>
-                <span class="shop-price-old">160,000₫</span>
-                <span class="shop-discount">-30%</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
+          </div> -->
         </div>
-        <!-- Pagination -->
+
+        <!-- Pagination  -->
         <div class="shop-pagination">
           <button>&lt; Trước</button>
           <span class="pages">
@@ -279,6 +177,15 @@
           <button>Tiếp &gt;</button>
         </div>
       </section>
+
+      <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+          <span class="close-cart" id="close-cart">&times;</span>
+          <h2>Giỏ Hàng</h2>
+          <div id="cart-items"></div>
+          <p id="empty-cart-msg">Chưa có sản phẩm nào.</p>
+        </div>
+      </div>
     </main>
 
     <footer>
