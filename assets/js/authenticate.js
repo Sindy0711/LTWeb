@@ -4,77 +4,109 @@ document.addEventListener("DOMContentLoaded", function () {
   const errorMessage = document.getElementById("errorMessage");
   const registerMessage = document.getElementById("registerMessage");
 
-  const defaultAdmin = { username: "admin", password: "admin123" };
+  // Tạo admin mặc định nếu chưa có
+  const defaultAdmin = { 
+    email: "admin@aurenest.com", 
+    password: "admin123", 
+    role: "admin",
+    fullname: "Quản trị viên"
+  };
+  
+  // Lấy danh sách người dùng từ localStorage hoặc tạo mới
   let users = JSON.parse(localStorage.getItem("users")) || [];
-
-  const adminExists = users.some(
-    (user) => user.username === defaultAdmin.username
-  );
-
+  
+  // Kiểm tra xem admin đã tồn tại chưa
+  const adminExists = users.some(user => user.email === defaultAdmin.email);
+  
   if (!adminExists) {
     users.push(defaultAdmin);
     localStorage.setItem("users", JSON.stringify(users));
+    console.log("Admin account created:", defaultAdmin);
   }
-  // ĐĂNG NHẬP
-  loginForm.addEventListener("submit", function (e) {
-    e.preventDefault();
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value;
+  // Xử lý đăng nhập
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (errorMessage) errorMessage.textContent = "";
 
-    const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
 
-    const user = storedUsers.find(
-      (user) => user.username === username && user.password === password
-    );
+      // Lấy lại danh sách người dùng từ localStorage (cập nhật mới nhất)
+      const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+      console.log("Stored users:", storedUsers);
+      
+      const user = storedUsers.find(u => 
+        u.email === email && u.password === password
+      );
 
-    if (user) {
-      // Lưu trạng thái đăng nhập (tuỳ chọn)
-      localStorage.setItem("currentUser", JSON.stringify(user));
-      window.location.href = "index.html";
-    } else {
-      errorMessage.textContent = "Sai tên đăng nhập hoặc mật khẩu.";
-    }
-  });
+      if (user) {
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        console.log("Login successful:", user);
+        
+        // Phân biệt admin/user
+        if (user.role === "admin") {
+          window.location.href = "user-admin.html";
+        } else {
+          window.location.href = "index.html";
+        }
+      } else {
+        if (errorMessage) errorMessage.textContent = "Sai email hoặc mật khẩu.";
+        console.log("Login failed for:", email);
+      }
+    });
+  }
 
-  // ĐĂNG KÝ
-  registerForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+  // Xử lý đăng ký - SỬA LỖI QUAN TRỌNG Ở ĐÂY
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (registerMessage) registerMessage.textContent = "";
 
-    const newUsername = document.getElementById("newUsername").value.trim();
-    const newPassword = document.getElementById("newPassword").value;
+      const fullname = document.getElementById("fullname").value.trim();
+      const email = document.getElementById("email").value.trim(); // Đảm bảo id đúng
+      const password = document.getElementById("password").value;
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+      // Lấy lại danh sách người dùng từ localStorage
+      let storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+      console.log("Current users before registration:", storedUsers);
+      
+      // Kiểm tra email đã tồn tại
+      const userExists = storedUsers.some(user => user.email === email);
+      
+      if (userExists) {
+        if (registerMessage) {
+          registerMessage.textContent = "Email đã được sử dụng.";
+          registerMessage.style.color = "red";
+        }
+        console.log("Registration failed: Email exists", email);
+        return;
+      }
 
-    const exists = users.some((user) => user.username === newUsername);
+      // Tạo user mới với role mặc định
+      const newUser = {
+        fullname,
+        email,
+        password,
+        role: "user"
+      };
 
-    if (exists) {
-      registerMessage.textContent = "Tên đăng nhập đã tồn tại.";
-      registerMessage.style.color = "red";
-      return;
-    }
+      storedUsers.push(newUser);
+      localStorage.setItem("users", JSON.stringify(storedUsers));
+      console.log("New user registered:", newUser);
+      console.log("Updated users:", storedUsers);
 
-    users.push({ username: newUsername, password: newPassword });
-    localStorage.setItem("users", JSON.stringify(users));
-
-    registerMessage.textContent = "Đăng ký thành công! Bạn có thể đăng nhập.";
-    registerMessage.style.color = "green";
-  });
-
-  // CHUYỂN GIAO DIỆN SIGNIN/SIGNUP
-  const container = document.getElementById("container");
-  const signUpButtons = document.querySelectorAll("#signUp");
-  const signInButtons = document.querySelectorAll("#signIn");
-
-  signUpButtons.forEach((btn) =>
-    btn.addEventListener("click", () => {
-      container.classList.add("right-panel-active");
-    })
-  );
-
-  signInButtons.forEach((btn) =>
-    btn.addEventListener("click", () => {
-      container.classList.remove("right-panel-active");
-    })
-  );
+      if (registerMessage) {
+        registerMessage.textContent = "Đăng ký thành công! Bạn có thể đăng nhập.";
+        registerMessage.style.color = "green";
+      }
+      
+      // Reset form sau 2 giây
+      setTimeout(() => {
+        registerForm.reset();
+        if (registerMessage) registerMessage.textContent = "";
+      }, 2000);
+    });
+  }
 });

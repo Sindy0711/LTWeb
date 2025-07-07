@@ -5,7 +5,8 @@
         "price": 149000,
         "description": "Chất liệu cotton mềm mại, thấm hút mồ hôi tốt.",
         "image": "./assets/img/product/1.jpg",
-        "category": "Áo thun"
+        "category": "Áo thun",
+        "quantity": 141
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "price": 189000,
         "description": "Phong cách trẻ trung, phù hợp đi chơi hoặc mặc thường ngày.",
         "image": "./assets/img/product/2.jpg",
-        "category": "Áo thun"
+        "category": "Áo thun",
+        "quantity": 212
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "price": 129000,
         "description": "Thiết kế đơn giản, màu sắc trung tính, phù hợp mọi giới tính.",
         "image": "./assets/img/product/1.jpg",
-        "category": "Áo thun"
+        "category": "Áo thun",
+        "quantity": 200
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "price": 229000,
         "description": "Form slim fit, vải không nhăn, lịch sự.",
         "image": "./assets/img/product/1.jpg",
-        "category": "Sơ mi"
+        "category": "Sơ mi",
+        "quantity": 235
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "price": 259000,
         "description": "Phong cách bụi bặm, chất denim cao cấp.",
         "image": "./assets/img/product/2.jpg",
-        "category": "Sơ mi"
+        "category": "Sơ mi",
+        "quantity": 135
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "price": 199000,
         "description": "Kiểu dáng dễ thương, năng động, phối đồ đa dạng.",
         "image": "./assets/img/product/3.jpg",
-        "category": "Sơ mi"
+        "category": "Sơ mi",
+        "quantity": 342
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "price": 379000,
         "description": "Phong cách trẻ trung, năng động, chất jean co giãn.",
         "image": "./assets/img/product/1.jpg",
-        "category": "Quần jeans"
+        "category": "Quần jeans",
+        "quantity": 141
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "price": 359000,
         "description": "Thời trang Hàn Quốc, dáng suông hiện đại.",
         "image": "./assets/img/product/2.jpg",
-        "category": "Quần jeans"
+        "category": "Quần jeans",
+        "quantity": 567
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "price": 299000,
         "description": "Phong cách cổ điển, phù hợp nhiều phong cách.",
         "image": "./assets/img/product/3.jpg",
-        "category": "Quần jeans"
+        "category": "Quần jeans",
+        "quantity": 345
     },
     {
         "id": 10,
@@ -77,7 +86,8 @@
         "price": 359000,
         "description": "Hoodie dày dặn, ấm áp, phù hợp mùa đông.",
         "image": "./assets/img/product/1.jpg",
-        "category": "Áo hoodie"
+        "category": "Áo hoodie",
+        "quantity": 234
     },
     {
         "id": 11,
@@ -85,7 +95,8 @@
         "price": 329000,
         "description": "Thiết kế in hình dễ thương, phong cách trẻ trung.",
         "image": "./assets/img/product/2.jpg",
-        "category": "Áo hoodie"
+        "category": "Áo hoodie",
+        "quantity": 12
     },
     {
         "id": 12,
@@ -93,6 +104,7 @@
         "price": 379000,
         "description": "Form rộng thoải mái, chất nỉ mềm mịn.",
         "image": "./assets/img/product/1.jpg",
-        "category": "Áo hoodie"
+        "category": "Áo hoodie",
+        "quantity": 123
     }
 ]

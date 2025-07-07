@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURENEST - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/user-admin.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <h1>
+                <img src="./assets/img/Logo.png" alt="Aurenest Logo">
+                AURENEST
+            </h1>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item active" data-target="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </li>
+            <li class="nav-item" data-target="users">
+                <i class="fas fa-users"></i>
+                <span>Quản lý người dùng</span>
+            </li>
+            <li class="nav-item" data-target="products">
+                <i class="fas fa-tshirt"></i>
+                <span>Quản lý sản phẩm</span>
+            </li>
+            <li class="nav-item" data-target="orders">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Quản lý đơn hàng</span>
+            </li>
+            <li class="nav-item" data-target="settings">
+                <i class="fas fa-cog"></i>
+                <span>Cài đặt</span>
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Đăng xuất</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="page-title" id="page-title">Dashboard</div>
+            <div class="admin-info">
+                <span class="admin-name">Quản trị viên</span>
+                <img src="" alt="Admin">
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="content-section active" id="dashboard">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon users">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="user-count">0</h3>
+                        <p>Người dùng</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon products">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="product-count">0</h3>
+                        <p>Sản phẩm</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orders">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="order-count">0</h3>
+                        <p>Đơn hàng</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon revenue">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="revenue">0₫</h3>
+                        <p>Doanh thu</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2 class="section-title">Hoạt động gần đây</h2>
+            </div>
+
+            <div id="recent-activity">
+                <!-- Activity items will be added here -->
+            </div>
+        </div>
+
+        <!-- User Management Section -->
+        <div class="content-section" id="users">
+            <div class="section-header">
+                <h2 class="section-title">Quản lý người dùng</h2>
+                <button class="btn btn-primary" id="add-user-btn">Thêm người dùng</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên người dùng</th>
+                            <th>Email</th>
+                            <th>Vai trò</th>
+                            <th>Ngày tạo</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body">
+                        <!-- User rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal xác nhận -->
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="confirmModalTitle">Xác nhận</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmModalMessage">Bạn có chắc chắn muốn thực hiện hành động này?</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirmModalCancel" class="btn">Hủy</button>
+                    <button id="confirmModalOk" class="btn btn-primary">Đồng ý</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal thông báo -->
+        <div id="alertModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="alertModalTitle">Thông báo</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p id="alertModalMessage"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="alertModalOk" class="btn btn-primary">Đóng</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal thêm/sửa người dùng -->
+        <div id="userModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="userModalTitle">Thêm/Sửa người dùng</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="userForm">
+                        <div class="form-group">
+                            <label for="userFullname">Họ và tên</label>
+                            <input type="text" id="userFullname" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Email</label>
+                            <input type="email" id="userEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userPassword">Mật khẩu</label>
+                            <input type="password" id="userPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userRole">Vai trò</label>
+                            <select id="userRole" class="form-control">
+                                <option value="user">Người dùng</option>
+                                <option value="admin">Quản trị viên</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="userModalCancel" class="btn">Hủy</button>
+                    <button id="userModalSave" class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Management Section -->
+        <div class="content-section" id="products">
+            <div class="section-header">
+                <h2 class="section-title">Quản lý sản phẩm</h2>
+                <button class="btn btn-primary" id="add-product-btn">Thêm sản phẩm</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Danh mục</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-table-body">
+                        <!-- Product rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal thêm/sửa sản phẩm -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="productModalTitle">Thêm/Sửa sản phẩm</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="productForm">
+                        <div class="form-group">
+                            <label for="productName">Tên sản phẩm</label>
+                            <input type="text" id="productName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory">Danh mục</label>
+                            <select id="productCategory" class="form-control" required>
+                                <option value="">Chọn danh mục</option>
+                                <option value="Áo thun">Áo thun</option>
+                                <option value="Sơ mi">Sơ mi</option>
+                                <option value="Quần jeans">Quần jeans</option>
+                                <option value="Áo khoác">Áo khoác</option>
+                                <option value="Phụ kiện">Phụ kiện</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">Giá (₫)</label>
+                            <input type="number" id="productPrice" class="form-control" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productQuantity">Số lượng</label>
+                            <input type="number" id="productQuantity" class="form-control" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productDescription">Mô tả</label>
+                            <textarea id="productDescription" class="form-control" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="productModalCancel" class="btn">Hủy</button>
+                    <button id="productModalSave" class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Management Section -->
+        <div class="content-section" id="orders">
+            <div class="section-header">
+                <h2 class="section-title">Quản lý đơn hàng</h2>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Ngày đặt</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-table-body">
+                        <!-- Order rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="content-section" id="settings">
+            <div class="section-header">
+                <h2 class="section-title">Cài đặt hệ thống</h2>
+            </div>
+
+            <form id="settings-form">
+                <div class="form-group">
+                    <label>Tên website</label>
+                    <input type="text" class="form-control" value="AURENEST">
+                </div>
+
+                <div class="form-group">
+                    <label>Email quản trị</label>
+                    <input type="email" class="form-control" value="admin@aurenest.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <textarea class="form-control">624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input type="text" class="form-control" value="(+84) 123 456 789">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Lưu cài đặt</button>
+            </form>
+        </div>
+    </div>
+    <script src="./assets/js/user-admin.js"></script>
+</body>
+
+</html>
