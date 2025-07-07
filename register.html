@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AURENEST Signup</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/css/authenticate.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Tạo tài khoản</h1>
-      <form id="signUpForm">
-        <input type="text" placeholder="Họ và tên" required />
-        <input type="email" placeholder="Email hoặc SĐT" required />
-        <input type="password" placeholder="Mật khẩu" required />
-        <button type="submit" class="btn">Đăng ký</button>
-      </form>
 
-      <p class="or">Hoặc</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURENEST Signup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/authenticate.css" />
+</head>
 
-      <button class="google-btn">
-        <img
-          src="https://img.icons8.com/color/48/000000/google-logo.png"
-          alt="Google"
-        />
-        Đăng ký bằng Google
-      </button>
+<body>
+  <div class="container">
+    <h1>Tạo tài khoản</h1>
+    <form id="registerForm">
+      <input type="text" id="fullname" placeholder="Họ và tên" required />
+      <input type="email" id="email" placeholder="Email hoặc SĐT" required />
+      <input type="password" id="password" placeholder="Mật khẩu" required />
+      <button type="submit" class="btn">Đăng ký</button>
+      <div id="registerMessage" style="color:red; margin-top:10px;"></div>
+    </form>
 
-      <div class="footer-text">
-        Đã có tài khoản? <a href="login.html">Đăng nhập</a>
-      </div>
+    <p class="or">Hoặc</p>
+
+    <button class="google-btn">
+      <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google" />
+      Đăng ký bằng Google
+    </button>
+
+    <div class="footer-text">
+      Đã có tài khoản? <a href="login.html">Đăng nhập</a>
     </div>
-  </body>
+  </div>
+  <script src="./assets/js/authenticate.js"></script>
+</body>
+
 </html>

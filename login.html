@@ -1,30 +1,31 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AURENEST Login</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/css/authenticate.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Đăng nhập vào AURENEST</h1>
-      <form id="loginForm">
-        <input type="text" id="username" placeholder="Tên đăng nhập" required />
-        <input type="password" id="password" placeholder="Mật khẩu" required />
-        <div class="form-options">
-          <label><input type="checkbox" /> Nhớ mật khẩu</label>
-        </div>
-        <button type="submit" class="btn">Đăng nhập</button>
-      </form>
-      <div class="footer-text">
-        Chưa có tài khoản? <a href="/register.html">Đăng ký</a>
-      </div>
-    </div>
 
-    <script src="./assets/js/authenticate.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURENEST Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/authenticate.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Đăng nhập vào AURENEST</h1>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email hoặc SĐT" required />
+      <input type="password" id="password" placeholder="Mật khẩu" required />
+      <div class="form-options">
+        <label><input type="checkbox" /> Nhớ mật khẩu</label>
+      </div>
+      <button type="submit" class="btn">Đăng nhập</button>
+      <div id="errorMessage" style="color:red; margin-top:10px;"></div>
+    </form>
+    <div class="footer-text">
+      Chưa có tài khoản? <a href="/register.html">Đăng ký</a>
+    </div>
+  </div>
+
+  <script src="./assets/js/authenticate.js"></script>
+</body>
+
 </html>
