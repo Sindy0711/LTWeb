@@ -4,7 +4,7 @@
         "name": "Áo Thun Nam Cotton Basic",
         "price": 149000,
         "description": "Chất liệu cotton mềm mại, thấm hút mồ hôi tốt.",
-        "image": "https://picsum.photos/id/1005/300/300",
+        "image": "./assets/img/product/1.jpg",
         "category": "Áo thun"
     },
     {
@@ -12,7 +12,7 @@
         "name": "Áo Thun Oversized ",
         "price": 189000,
         "description": "Phong cách trẻ trung, phù hợp đi chơi hoặc mặc thường ngày.",
-        "image": "https://picsum.photos/id/1002/300/300",
+        "image": "./assets/img/product/2.jpg",
         "category": "Áo thun"
     },
     {
@@ -20,7 +20,7 @@
         "name": "Áo Thun Trơn Unisex",
         "price": 129000,
         "description": "Thiết kế đơn giản, màu sắc trung tính, phù hợp mọi giới tính.",
-        "image": "https://picsum.photos/id/1011/300/300",
+        "image": "./assets/img/product/1.jpg",
         "category": "Áo thun"
     },
     {
@@ -28,7 +28,7 @@
         "name": "Áo Sơ Mi Trắng Công Sở",
         "price": 229000,
         "description": "Form slim fit, vải không nhăn, lịch sự.",
-        "image": "https://picsum.photos/id/1001/300/300",
+        "image": "./assets/img/product/1.jpg",
         "category": "Sơ mi"
     },
     {
@@ -36,7 +36,7 @@
         "name": "Áo Sơ Mi Denim Nam",
         "price": 259000,
         "description": "Phong cách bụi bặm, chất denim cao cấp.",
-        "image": "https://picsum.photos/id/1033/300/300",
+        "image": "./assets/img/product/2.jpg",
         "category": "Sơ mi"
     },
     {
@@ -44,7 +44,7 @@
         "name": "Áo Sơ Mi Kẻ Caro Nữ",
         "price": 199000,
         "description": "Kiểu dáng dễ thương, năng động, phối đồ đa dạng.",
-        "image": "https://picsum.photos/id/1066/300/300",
+        "image": "./assets/img/product/3.jpg",
         "category": "Sơ mi"
     },
     {
@@ -52,7 +52,7 @@
         "name": "Quần Jean Nam Rách Gối",
         "price": 379000,
         "description": "Phong cách trẻ trung, năng động, chất jean co giãn.",
-        "image": "https://picsum.photos/id/1021/300/300",
+        "image": "./assets/img/product/1.jpg",
         "category": "Quần jeans"
     },
     {
@@ -60,7 +60,7 @@
         "name": "Quần Jean Nữ Ống Rộng",
         "price": 359000,
         "description": "Thời trang Hàn Quốc, dáng suông hiện đại.",
-        "image": "https://picsum.photos/id/1022/300/300",
+        "image": "./assets/img/product/2.jpg",
         "category": "Quần jeans"
     },
     {
@@ -68,7 +68,7 @@
         "name": "Quần Jean Xanh Cổ Điển",
         "price": 299000,
         "description": "Phong cách cổ điển, phù hợp nhiều phong cách.",
-        "image": "https://picsum.photos/id/1023/300/300",
+        "image": "./assets/img/product/3.jpg",
         "category": "Quần jeans"
     },
     {
@@ -76,7 +76,7 @@
         "name": "Áo Hoodie Nam Trơn Basic",
         "price": 359000,
         "description": "Hoodie dày dặn, ấm áp, phù hợp mùa đông.",
-        "image": "https://picsum.photos/id/1049/300/300",
+        "image": "./assets/img/product/1.jpg",
         "category": "Áo hoodie"
     },
     {
@@ -84,7 +84,7 @@
         "name": "Áo Hoodie Nữ In Hình",
         "price": 329000,
         "description": "Thiết kế in hình dễ thương, phong cách trẻ trung.",
-        "image": "https://picsum.photos/id/1050/300/300",
+        "image": "./assets/img/product/2.jpg",
         "category": "Áo hoodie"
     },
     {
@@ -92,7 +92,7 @@
         "name": "Áo Hoodie Oversize Unisex",
         "price": 379000,
         "description": "Form rộng thoải mái, chất nỉ mềm mịn.",
-        "image": "https://picsum.photos/id/1051/300/300",
+        "image": "./assets/img/product/1.jpg",
         "category": "Áo hoodie"
     }
 ]
