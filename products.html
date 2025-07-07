@@ -52,7 +52,7 @@
               <i class="far fa-heart"></i>
             </div>
 
-            <div class="action-icon cart-icon">
+            <div class="action-icon cart-icon" id="open-cart">
               <i class="fas fa-shopping-cart"></i>
               <span class="cart-badge" id="cart-count">0</span>
             </div>
@@ -144,7 +144,7 @@
       <!-- PRODUCT SECTION -->
       <section class="shop-product-section" style="padding-bottom: 60px">
         <div class="shop-product-header">
-          <h2>Casual</h2>
+          <h2>Thường ngày</h2>
           <p>
             Hiển thị 1–12 trên 100 sản phẩm | Sắp xếp theo:
             <strong>Phổ biến nhất</strong>
@@ -177,6 +177,15 @@
           <button>Tiếp &gt;</button>
         </div>
       </section>
+
+      <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+          <span class="close-cart" id="close-cart">&times;</span>
+          <h2>Giỏ Hàng</h2>
+          <div id="cart-items"></div>
+          <p id="empty-cart-msg">Chưa có sản phẩm nào.</p>
+        </div>
+      </div>
     </main>
 
     <footer>
