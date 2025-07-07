@@ -869,67 +869,121 @@ a {
   font-weight: bold;
 }
 
+/* Cart Modal */
+/* --- MODAL GIỎ HÀNG --- */
 .cart-modal {
-  display: none;
+  display: none; /* Mặc định ẩn */
   position: fixed;
-  z-index: 1000;
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* nền mờ */
+  overflow-y: auto;
 }
 
 .cart-modal-content {
-  background-color: white;
-  margin: 10% auto;
-  padding: 20px;
+  background-color: #fff;
   width: 90%;
-  max-width: 400px;
-  border-radius: 8px;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
   position: relative;
-}
-.cart-item-info {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.cart-item-image {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 8px;
-}
+/* Nút đóng */
 .close-cart {
   position: absolute;
   top: 10px;
-  right: 16px;
+  right: 15px;
   font-size: 24px;
+  font-weight: bold;
+  color: #666;
   cursor: pointer;
 }
 
-#cart-items {
+.close-cart:hover {
+  color: black;
+}
+
+/* Tiêu đề */
+.cart-modal-content h2 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+/* Khi giỏ trống */
+#empty-cart-msg {
+  text-align: center;
+  color: #888;
+  font-style: italic;
   margin-top: 20px;
 }
 
+/* Danh sách sản phẩm */
 .cart-item {
-  border-bottom: 1px solid #ddd;
   padding: 10px 0;
+  border-bottom: 1px solid #eee;
 }
 
+.cart-item-info {
+  overflow: hidden;
+  clear: both;
+  padding-bottom: 10px;
+}
+
+/* Hình ảnh sản phẩm */
+.cart-item-image {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Nội dung bên phải ảnh */
+.cart-item-info > div {
+  overflow: hidden;
+}
+
+/* Tên, giá, số lượng, nút xoá trên cùng 1 dòng */
+.cart-item-info > div div,
+.cart-item-info > div button {
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/* Nút xoá */
 .remove-btn {
-  margin-top: 5px;
-  background-color: #e74c3c;
+  background-color: #ff4444;
   color: white;
   border: none;
-  padding: 5px 8px;
+  padding: 5px 10px;
+  font-size: 13px;
   border-radius: 4px;
   cursor: pointer;
 }
+
 .remove-btn:hover {
-  background-color: #c0392b;
+  background-color: #cc0000;
+}
+
+/* Tổng giá */
+.cart-total {
+  text-align: right;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #222;
 }
 
 /* Toast */

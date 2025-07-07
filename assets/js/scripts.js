@@ -18,6 +18,35 @@ document.addEventListener("DOMContentLoaded", function () {
   // Gọi lần đầu khi trang tải để cập nhật số lượng
   updateCartCount();
 
+
+  
+  const userMenu = document.getElementById("user-menu");
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  if (userMenu) {
+    if (currentUser) {
+      userMenu.innerHTML = `
+      <a href="/profile.html">Trang cá nhân</a>
+      <a href="#" id="logout-btn">Đăng xuất</a>
+    `;
+
+      document.addEventListener("click", function (e) {
+        const logoutBtn = document.getElementById("logout-btn");
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            localStorage.removeItem("currentUser");
+            location.reload();
+          });
+        }
+      });
+    } else {
+      userMenu.innerHTML = `
+      <a href="/login.html">Đăng nhập</a>
+      <a href="/register.html">Đăng ký</a>
+    `;
+    }
+  }
   fetch("./assets/data/products.json")
     .then((res) => res.json())
     .then((products) => {
@@ -142,11 +171,31 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".remove-btn").forEach((btn) => {
       btn.addEventListener("click", function () {
         const index = this.getAttribute("data-index");
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
         cart.splice(index, 1);
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCartCount();
         renderCartItems();
       });
     });
+    updateTotalPrice();
+    if (cart.length === 0) {
+      emptyCartMsg.style.display = "block";
+      document.getElementById("total-price").textContent = "0₫"; // cập nhật trực tiếp luôn
+      return;
+    }
+  }
+
+  function updateTotalPrice() {
+    const totalPriceEl = document.getElementById("total-price");
+    if (!totalPriceEl) return;
+
+    const currentCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const total = currentCart.reduce((sum, item) => {
+      const product = allProducts.find((p) => p.id == item.id);
+      return sum + (product ? product.price * item.quantity : 0);
+    }, 0);
+
+    totalPriceEl.textContent = `${total.toLocaleString()}₫`;
   }
 });

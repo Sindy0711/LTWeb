@@ -59,9 +59,8 @@
 
             <div class="action-icon user-dropdown">
               <i class="far fa-user"></i>
-              <div class="dropdown-menu">
-                <a href="/login.html">Đăng nhập</a>
-                <a href="/register.html">Đăng ký</a>
+              <div class="dropdown-menu" id="user-menu">
+
               </div>
             </div>
           </div>
@@ -184,6 +183,9 @@
           <h2>Giỏ Hàng</h2>
           <div id="cart-items"></div>
           <p id="empty-cart-msg">Chưa có sản phẩm nào.</p>
+          <div id="cart-total" class="cart-total">
+            Tổng: <span id="total-price">0₫</span>
+          </div>
         </div>
       </div>
     </main>
