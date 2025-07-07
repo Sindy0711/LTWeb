@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Tạo admin mặc định nếu chưa có
   const defaultAdmin = { 
+    id: 1, // Thêm ID cố định cho admin
     email: "admin@aurenest.com", 
     password: "admin123", 
     role: "admin",
@@ -24,7 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Admin account created:", defaultAdmin);
   }
 
-  // Xử lý đăng nhập
+  // Hàm tạo ID mới (tương tự trong user-admin.js)
+  function generateNewId() {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    return users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1;
+  }
+
+  // Xử lý đăng nhập (không thay đổi)
   if (loginForm) {
     loginForm.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -33,10 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
 
-      // Lấy lại danh sách người dùng từ localStorage (cập nhật mới nhất)
       const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-      console.log("Stored users:", storedUsers);
-      
       const user = storedUsers.find(u => 
         u.email === email && u.password === password
       );
@@ -45,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("currentUser", JSON.stringify(user));
         console.log("Login successful:", user);
         
-        // Phân biệt admin/user
         if (user.role === "admin") {
           window.location.href = "user-admin.html";
         } else {
@@ -58,19 +61,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Xử lý đăng ký - SỬA LỖI QUAN TRỌNG Ở ĐÂY
+  // Xử lý đăng ký - CẬP NHẬT QUAN TRỌNG
   if (registerForm) {
     registerForm.addEventListener("submit", function (e) {
       e.preventDefault();
       if (registerMessage) registerMessage.textContent = "";
 
       const fullname = document.getElementById("fullname").value.trim();
-      const email = document.getElementById("email").value.trim(); // Đảm bảo id đúng
+      const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
 
-      // Lấy lại danh sách người dùng từ localStorage
       let storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-      console.log("Current users before registration:", storedUsers);
       
       // Kiểm tra email đã tồn tại
       const userExists = storedUsers.some(user => user.email === email);
@@ -80,12 +81,12 @@ document.addEventListener("DOMContentLoaded", function () {
           registerMessage.textContent = "Email đã được sử dụng.";
           registerMessage.style.color = "red";
         }
-        console.log("Registration failed: Email exists", email);
         return;
       }
 
-      // Tạo user mới với role mặc định
+      // Tạo user mới với ID tự động
       const newUser = {
+        id: generateNewId(), // Thêm ID tự động
         fullname,
         email,
         password,
@@ -95,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
       storedUsers.push(newUser);
       localStorage.setItem("users", JSON.stringify(storedUsers));
       console.log("New user registered:", newUser);
-      console.log("Updated users:", storedUsers);
 
       if (registerMessage) {
         registerMessage.textContent = "Đăng ký thành công! Bạn có thể đăng nhập.";

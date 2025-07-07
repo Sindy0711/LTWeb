@@ -1,273 +1,283 @@
 // Xử lý đăng xuất
-        document.querySelector('.nav-item:last-child').addEventListener('click', function () {
-            localStorage.removeItem('currentUser');
-            window.location.href = "login.html";
-        });
+document.querySelector('.nav-item:last-child').addEventListener('click', function () {
+    localStorage.removeItem('currentUser');
+    window.location.href = "login.html";
+});
 
-        // Hiển thị thông tin admin đang đăng nhập
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (currentUser) {
-            const adminInfo = document.querySelector('.admin-info');
-            if (adminInfo) {
-                const adminName = adminInfo.querySelector('.admin-name');
-                if (adminName) {
-                    adminName.textContent = currentUser.fullname || 'Admin';
-                }
-            }
+// Hiển thị thông tin admin đang đăng nhập
+const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+if (currentUser) {
+    const adminInfo = document.querySelector('.admin-info');
+    if (adminInfo) {
+        const adminName = adminInfo.querySelector('.admin-name');
+        if (adminName) {
+            adminName.textContent = currentUser.fullname || 'Admin';
         }
+    }
+}
 
-        // Navigation
-        const navItems = document.querySelectorAll('.nav-item:not(:last-child)');
-        const contentSections = document.querySelectorAll('.content-section');
-        const pageTitle = document.getElementById('page-title');
+// Navigation
+const navItems = document.querySelectorAll('.nav-item:not(:last-child)');
+const contentSections = document.querySelectorAll('.content-section');
+const pageTitle = document.getElementById('page-title');
 
-        navItems.forEach(item => {
-            item.addEventListener('click', function () {
-                const target = this.getAttribute('data-target');
+navItems.forEach(item => {
+    item.addEventListener('click', function () {
+        const target = this.getAttribute('data-target');
 
-                // Update active nav item
-                navItems.forEach(navItem => navItem.classList.remove('active'));
-                this.classList.add('active');
+        // Update active nav item
+        navItems.forEach(navItem => navItem.classList.remove('active'));
+        this.classList.add('active');
 
-                // Show target section
-                contentSections.forEach(section => {
-                    section.classList.remove('active');
-                    if (section.id === target) {
-                        section.classList.add('active');
-                        pageTitle.textContent = this.querySelector('span').textContent;
-                    }
-                });
-            });
-        });
-
-        // ========== MODAL FUNCTIONS ==========
-        // Khởi tạo modal
-        const confirmModal = document.getElementById('confirmModal');
-        const alertModal = document.getElementById('alertModal');
-        const userModal = document.getElementById('userModal');
-
-        // Đóng modal khi click vào nút đóng hoặc bên ngoài
-        document.querySelectorAll('.modal .close').forEach(closeBtn => {
-            closeBtn.addEventListener('click', () => {
-                closeAllModals();
-            });
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target.classList.contains('modal')) {
-                closeAllModals();
+        // Show target section
+        contentSections.forEach(section => {
+            section.classList.remove('active');
+            if (section.id === target) {
+                section.classList.add('active');
+                pageTitle.textContent = this.querySelector('span').textContent;
             }
         });
+    });
+});
 
-        function closeAllModals() {
-            document.querySelectorAll('.modal').forEach(modal => {
-                modal.style.display = 'none';
-            });
-        }
+// ========== MODAL FUNCTIONS ==========
+// Khởi tạo modal
+const confirmModal = document.getElementById('confirmModal');
+const alertModal = document.getElementById('alertModal');
+const userModal = document.getElementById('userModal');
 
-        // Hiển thị modal xác nhận
-        function showConfirmModal(message, callback) {
-            document.getElementById('confirmModalMessage').textContent = message;
-            confirmModal.style.display = 'block';
+// Đóng modal khi click vào nút đóng hoặc bên ngoài
+document.querySelectorAll('.modal .close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+        closeAllModals();
+    });
+});
 
-            document.getElementById('confirmModalOk').onclick = function () {
-                closeAllModals();
-                callback(true);
+window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal')) {
+        closeAllModals();
+    }
+});
+
+function closeAllModals() {
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.style.display = 'none';
+    });
+}
+
+// Hiển thị modal xác nhận
+function showConfirmModal(message, callback) {
+    document.getElementById('confirmModalMessage').textContent = message;
+    confirmModal.style.display = 'block';
+
+    document.getElementById('confirmModalOk').onclick = function () {
+        closeAllModals();
+        callback(true);
+    };
+
+    document.getElementById('confirmModalCancel').onclick = function () {
+        closeAllModals();
+        callback(false);
+    };
+}
+
+// Hiển thị modal thông báo
+function showAlertModal(title, message) {
+    document.getElementById('alertModalTitle').textContent = title;
+    document.getElementById('alertModalMessage').textContent = message;
+    alertModal.style.display = 'block';
+
+    document.getElementById('alertModalOk').onclick = function () {
+        alertModal.style.display = 'none';
+    };
+}
+
+// Hiển thị modal người dùng (thêm/sửa)
+function showUserModal(user = null) {
+    const form = document.getElementById('userForm');
+    form.reset();
+
+    if (user) {
+        document.getElementById('userModalTitle').textContent = 'Sửa người dùng';
+        document.getElementById('userFullname').value = user.fullname || '';
+        document.getElementById('userEmail').value = user.email;
+        document.getElementById('userEmail').readOnly = true;
+        document.getElementById('userPassword').value = user.password;
+        document.getElementById('userRole').value = user.role || 'user';
+    } else {
+        document.getElementById('userModalTitle').textContent = 'Thêm người dùng';
+        document.getElementById('userEmail').readOnly = false;
+    }
+
+    userModal.style.display = 'block';
+
+    document.getElementById('userModalSave').onclick = function () {
+        if (form.checkValidity()) {
+            const userData = {
+                fullname: document.getElementById('userFullname').value.trim(),
+                email: document.getElementById('userEmail').value.trim(),
+                password: document.getElementById('userPassword').value,
+                role: document.getElementById('userRole').value
             };
-
-            document.getElementById('confirmModalCancel').onclick = function () {
-                closeAllModals();
-                callback(false);
-            };
-        }
-
-        // Hiển thị modal thông báo
-        function showAlertModal(title, message) {
-            document.getElementById('alertModalTitle').textContent = title;
-            document.getElementById('alertModalMessage').textContent = message;
-            alertModal.style.display = 'block';
-
-            document.getElementById('alertModalOk').onclick = function () {
-                alertModal.style.display = 'none';
-            };
-        }
-
-        // Hiển thị modal người dùng (thêm/sửa)
-        function showUserModal(user = null) {
-            const form = document.getElementById('userForm');
-            form.reset();
-
+            closeAllModals();
             if (user) {
-                document.getElementById('userModalTitle').textContent = 'Sửa người dùng';
-                document.getElementById('userFullname').value = user.fullname || '';
-                document.getElementById('userEmail').value = user.email;
-                document.getElementById('userEmail').readOnly = true;
-                document.getElementById('userPassword').value = user.password;
-                document.getElementById('userRole').value = user.role || 'user';
+                updateUser(user.id, userData); // Truyền ID thay vì email
             } else {
-                document.getElementById('userModalTitle').textContent = 'Thêm người dùng';
-                document.getElementById('userEmail').readOnly = false;
+                addUser(userData);
             }
-
-            userModal.style.display = 'block';
-
-            document.getElementById('userModalSave').onclick = function () {
-                if (form.checkValidity()) {
-                    const userData = {
-                        fullname: document.getElementById('userFullname').value.trim(),
-                        email: document.getElementById('userEmail').value.trim(),
-                        password: document.getElementById('userPassword').value,
-                        role: document.getElementById('userRole').value
-                    };
-                    closeAllModals();
-                    if (user) {
-                        updateUser(user.email, userData);
-                    } else {
-                        addUser(userData);
-                    }
-                } else {
-                    form.reportValidity();
-                }
-            };
-
-            document.getElementById('userModalCancel').onclick = function () {
-                closeAllModals();
-            };
+        } else {
+            form.reportValidity();
         }
+    };
 
-        // ========== USER MANAGEMENT FUNCTIONS ==========
-        // Lấy dữ liệu người dùng từ localStorage
-        function getUsers() {
-            return JSON.parse(localStorage.getItem('users')) || [];
-        }
+    document.getElementById('userModalCancel').onclick = function () {
+        closeAllModals();
+    };
+}
 
-        // Cập nhật dữ liệu người dùng
-        function updateUsers(users) {
-            localStorage.setItem('users', JSON.stringify(users));
-            renderUsersTable();
-            updateDashboardStats();
-        }
+// ========== USER MANAGEMENT FUNCTIONS ==========
+// Lấy dữ liệu người dùng từ localStorage
+function getUsers() {
+    return JSON.parse(localStorage.getItem('users')) || [];
+}
 
-        // Render bảng người dùng
-        function renderUsersTable() {
-            const users = getUsers();
-            const usersTableBody = document.getElementById('users-table-body');
-            usersTableBody.innerHTML = '';
+// Cập nhật dữ liệu người dùng
+function updateUsers(users) {
+    localStorage.setItem('users', JSON.stringify(users));
+    renderUsersTable();
+    updateDashboardStats();
+}
 
-            users.forEach(user => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                <td>${users.indexOf(user) + 1}</td>
-                <td>${user.fullname || 'N/A'}</td>
-                <td>${user.email}</td>
-                <td>${user.role === 'admin' ? 'Quản trị viên' : 'Người dùng'}</td>
-                <td>${new Date().toLocaleDateString()}</td>
-                <td>
-                    <button class="action-btn edit-btn" data-id="${user.email}">Sửa</button>
-                    <button class="action-btn delete-btn" data-id="${user.email}" ${user.email === 'admin@aurenest.com' ? 'disabled' : ''}>Xóa</button>
-                </td>
-            `;
-                usersTableBody.appendChild(row);
-            });
+// Render bảng người dùng
+function renderUsersTable() {
+    const users = getUsers();
+    const usersTableBody = document.getElementById('users-table-body');
+    usersTableBody.innerHTML = '';
 
-            // Thêm sự kiện cho nút xóa
-            document.querySelectorAll('.delete-btn').forEach(button => {
-                button.addEventListener('click', function () {
-                    const email = this.getAttribute('data-id');
-                    deleteUser(email);
-                });
-            });
+    users.forEach(user => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${user.id}</td>
+            <td>${user.fullname || 'N/A'}</td>
+            <td>${user.email}</td>
+            <td>${user.role === 'admin' ? 'Quản trị viên' : 'Người dùng'}</td>
+            <td>${new Date().toLocaleDateString()}</td>
+            <td>
+                <button class="action-btn edit-btn" data-id="${user.id}">Sửa</button>
+                <button class="action-btn delete-btn" data-id="${user.id}" ${user.email === 'admin@aurenest.com' ? 'disabled' : ''}>Xóa</button>
+            </td>
+        `;
+        usersTableBody.appendChild(row);
+    });
 
-            // Thêm sự kiện cho nút sửa
-            document.querySelectorAll('.edit-btn').forEach(button => {
-                button.addEventListener('click', function () {
-                    const email = this.getAttribute('data-id');
-                    editUser(email);
-                });
-            });
-        }
-
-        // Xóa người dùng
-        function deleteUser(email) {
-            if (email === 'admin@aurenest.com') {
-                showAlertModal('Lỗi', 'Không thể xóa tài khoản quản trị viên mặc định!');
-                return;
-            }
-
-            showConfirmModal('Bạn có chắc chắn muốn xóa người dùng này?', (confirmed) => {
-                if (confirmed) {
-                    const users = getUsers();
-                    const updatedUsers = users.filter(user => user.email !== email);
-                    updateUsers(updatedUsers);
-                    showAlertModal('Thành công', 'Người dùng đã được xóa thành công!');
-                }
-            });
-        }
-
-        // Sửa người dùng
-        function editUser(email) {
-            const users = getUsers();
-            const user = users.find(u => u.email === email);
-            if (user) {
-                showUserModal(user);
-            }
-        }
-
-        // Thêm người dùng mới
-        document.getElementById('add-user-btn').addEventListener('click', function () {
-            showUserModal();
+    // Sửa phần xử lý sự kiện
+    document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const id = parseInt(this.getAttribute('data-id'));
+            deleteUser(id);
         });
+    });
 
-        // Thêm người dùng mới vào hệ thống
-        function addUser(userData) {
-            const users = getUsers();
+    document.querySelectorAll('.edit-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const id = parseInt(this.getAttribute('data-id'));
+            editUser(id);
+        });
+    });
+}
 
-            if (users.some(u => u.email === userData.email)) {
-                showAlertModal('Lỗi', 'Email đã tồn tại trong hệ thống!');
-                return;
-            }
+// Xóa người dùng
+function deleteUser(id) {
+    const users = getUsers();
+    const user = users.find(u => u.id === id);
 
-            users.push(userData);
-            updateUsers(users);
-            showAlertModal('Thành công', 'Người dùng mới đã được thêm thành công!');
-        }
+    if (!user) return;
 
-        // Cập nhật thông tin người dùng
-        function updateUser(email, newData) {
-            const users = getUsers();
-            const updatedUsers = users.map(u => {
-                if (u.email === email) {
-                    return { ...u, ...newData };
-                }
-                return u;
-            });
+    if (user.email === 'admin@aurenest.com') {
+        showAlertModal('Lỗi', 'Không thể xóa tài khoản quản trị viên mặc định!');
+        return;
+    }
 
+    showConfirmModal('Bạn có chắc chắn muốn xóa người dùng này?', (confirmed) => {
+        if (confirmed) {
+            const updatedUsers = users.filter(u => u.id !== id);
             updateUsers(updatedUsers);
-            showAlertModal('Thành công', 'Thông tin người dùng đã được cập nhật!');
+            showAlertModal('Thành công', 'Người dùng đã được xóa thành công!');
         }
+    });
+}
 
-        // // ========== PRODUCT MANAGEMENT FUNCTIONS ==========
-        // // Lấy dữ liệu sản phẩm từ file JSON
-        async function getProducts() {
-            try {
-                const response = await fetch('./assets/data/products.json');
-                const products = await response.json();
-                return products;
-            } catch (error) {
-                console.error('Error loading products:', error);
-                return [];
-            }
+// Sửa người dùng
+function editUser(id) {
+    const users = getUsers();
+    const user = users.find(u => u.id === id);
+    if (user) {
+        showUserModal(user);
+    }
+}
+
+// Thêm người dùng mới
+document.getElementById('add-user-btn').addEventListener('click', function () {
+    showUserModal();
+});
+
+// Thêm người dùng mới vào hệ thống
+function addUser(userData) {
+    const users = getUsers();
+
+    // Tạo ID mới
+    const newId = users.length > 0
+        ? Math.max(...users.map(u => u.id)) + 1
+        : 1;
+
+    userData.id = newId;
+
+    if (users.some(u => u.email === userData.email)) {
+        showAlertModal('Lỗi', 'Email đã tồn tại trong hệ thống!');
+        return;
+    }
+
+    users.push(userData);
+    updateUsers(users);
+    showAlertModal('Thành công', 'Người dùng mới đã được thêm thành công!');
+}
+
+// Cập nhật thông tin người dùng
+function updateUser(id, newData) {
+    const users = getUsers();
+    const updatedUsers = users.map(u => {
+        if (u.id === id) {
+            return { ...u, ...newData };
         }
+        return u;
+    });
 
-        // Render bảng sản phẩm
-        async function renderProductsTable() {
-            const products = await getProducts();
-            const productsTableBody = document.getElementById('products-table-body');
-            productsTableBody.innerHTML = '';
+    updateUsers(updatedUsers);
+    showAlertModal('Thành công', 'Thông tin người dùng đã được cập nhật!');
+}
 
-            products.forEach(product => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
+// ========== PRODUCT MANAGEMENT FUNCTIONS ==========
+// Lấy dữ liệu sản phẩm từ file JSON
+async function getProducts() {
+    try {
+        const response = await fetch('./assets/data/products.json');
+        const products = await response.json();
+        return products;
+    } catch (error) {
+        console.error('Error loading products:', error);
+        return [];
+    }
+}
+
+// Render bảng sản phẩm
+async function renderProductsTable() {
+    const products = await getProducts();
+    const productsTableBody = document.getElementById('products-table-body');
+    productsTableBody.innerHTML = '';
+
+    products.forEach(product => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
             <td>${product.id}</td>
             <td>${product.name}</td>
             <td>${product.category}</td>
@@ -279,77 +289,78 @@
                 <button class="action-btn delete-btn" data-id="${product.id}">Xóa</button>
             </td>
         `;
-                productsTableBody.appendChild(row);
-            });
+        productsTableBody.appendChild(row);
+    });
 
-            // Thêm sự kiện cho nút xóa
-            document.querySelectorAll('.delete-btn').forEach(button => {
-                button.addEventListener('click', function () {
-                    const id = parseInt(this.getAttribute('data-id'));
-                    deleteProduct(id);
-                });
-            });
+    // Thêm sự kiện cho nút xóa
+    // document.querySelectorAll('.delete-btn').forEach(button => {
+    //     button.addEventListener('click', function () {
+    //         const id = parseInt(this.getAttribute('data-id'));
+    //         deleteProduct(id);
+    //     });
+    // });
 
-            // Thêm sự kiện cho nút sửa
-            document.querySelectorAll('.edit-btn').forEach(button => {
-                button.addEventListener('click', function () {
-                    const id = parseInt(this.getAttribute('data-id'));
-                    editProduct(id);
-                });
-            });
-        }
+    // Thêm sự kiện cho nút sửa
+    document.querySelectorAll('.edit-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const id = parseInt(this.getAttribute('data-id'));
+            editProduct(id);
+        });
+    });
+}
 
-        // Xóa sản phẩm
-        async function deleteProduct(id) {
-            showConfirmModal('Bạn có chắc chắn muốn xóa sản phẩm này?', async (confirmed) => {
-                if (confirmed) {
-                    const products = await getProducts();
-                    const updatedProducts = products.filter(product => product.id !== id);
-
-                    // Trong thực tế, bạn cần có API để lưu lại thay đổi
-                    // Ở đây chúng ta chỉ cập nhật giao diện
-                    renderProductsTable();
-                    updateDashboardStats();
-                    showAlertModal('Thành công', 'Sản phẩm đã được xóa thành công!');
-                }
-            });
-        }
-
-        // Sửa sản phẩm
-        async function editProduct(id) {
+// Xóa sản phẩm
+async function deleteProduct(id) {
+    showConfirmModal('Bạn có chắc chắn muốn xóa sản phẩm này?', async (confirmed) => {
+        if (confirmed) {
             const products = await getProducts();
-            const product = products.find(p => p.id === id);
-            if (product) {
-                showAlertModal('Thông báo', 'Chức năng sửa sản phẩm sẽ được triển khai sau.');
-                // Thực tế sẽ mở modal để chỉnh sửa thông tin sản phẩm
-            }
-        }
+            const updatedProducts = products.filter(product => product.id !== id);
 
-        // Thêm sản phẩm mới
-        document.getElementById('add-product-btn').addEventListener('click', function () {
-            showAlertModal('Thông báo', 'Chức năng thêm sản phẩm mới sẽ được triển khai sau.');
-            // Thực tế sẽ mở modal để thêm sản phẩm mới
-        });  
-
-        // Cập nhật thống kê dashboard
-        async function updateDashboardStats() {
-            // Cập nhật số lượng người dùng
-            const users = getUsers();
-            document.getElementById('user-count').textContent = users.length;
-
-            // Cập nhật số lượng sản phẩm
-            const products = await getProducts();
-            document.getElementById('product-count').textContent = products.length;
-        }
-
-        // Khởi tạo
-        document.addEventListener('DOMContentLoaded', function () {
-            renderUsersTable();
+            // Trong thực tế, bạn cần có API để lưu lại thay đổi
+            // Ở đây chúng ta chỉ cập nhật giao diện
             renderProductsTable();
             updateDashboardStats();
+            showAlertModal('Thành công', 'Sản phẩm đã được xóa thành công!');
+        }
+    });
+}
 
-            // Thêm sự kiện khi chuyển sang tab sản phẩm
-            document.querySelector('.nav-item[data-target="products"]').addEventListener('click', function () {
-                renderProductsTable();
-            });
-        });
+// Sửa sản phẩm
+async function editProduct(id) {
+    const products = await getProducts();
+    const product = products.find(p => p.id === id);
+    if (product) {
+        showAlertModal('Thông báo', 'Chức năng sửa sản phẩm sẽ được triển khai sau.');
+        // Thực tế sẽ mở modal để chỉnh sửa thông tin sản phẩm
+    }
+}
+
+// Thêm sản phẩm mới
+document.getElementById('add-product-btn').addEventListener('click', function () {
+    showAlertModal('Thông báo', 'Chức năng thêm sản phẩm mới sẽ được triển khai sau.');
+    // Thực tế sẽ mở modal để thêm sản phẩm mới
+});
+
+// =========================================================
+// Cập nhật thống kê dashboard
+async function updateDashboardStats() {
+    // Cập nhật số lượng người dùng
+    const users = getUsers();
+    document.getElementById('user-count').textContent = users.length;
+
+    // Cập nhật số lượng sản phẩm
+    const products = await getProducts();
+    document.getElementById('product-count').textContent = products.length;
+}
+
+// Khởi tạo
+document.addEventListener('DOMContentLoaded', function () {
+    renderUsersTable();
+    renderProductsTable();
+    updateDashboardStats();
+
+    // Thêm sự kiện khi chuyển sang tab sản phẩm
+    document.querySelector('.nav-item[data-target="products"]').addEventListener('click', function () {
+        renderProductsTable();
+    });
+});
