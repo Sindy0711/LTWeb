@@ -24,46 +24,49 @@
 <body>
   <!-- Navigation bar -->
   <nav class="navbar">
-    <div class="navbar-container container-fluid">
-      <div class="logo">
-        <img src="./assets/img/Logo.png" alt="Logo" />
-        <span>AURENEST</span>
-      </div>
-      <ul class="nav-links">
-        <li class="nav-link active"><a href="/index.html">Trang chủ</a></li>
-        <li class="nav-link"><a href="/about.html">Giới thiệu</a></li>
-        <li class="nav-link"><a href="/products.html">Sản phẩm</a></li>
-        <li class="nav-link"><a href="/contact.html">Liên hệ</a></li>
-      </ul>
-      <div class="holder">
-        <div class="search-box">
-          <input class="search-input" type="text" placeholder="Bạn đang tìm kiếm gì?" />
-          <i class="fas fa-search search-icon"></i>
+      <div class="navbar-container container-fluid">
+        <div class="logo">
+          <img src="./assets/img/Logo.png" alt="Logo" />
+          <span>AURENEST</span>
         </div>
-        <div class="header-actions">
-          <div class="action-icon">
-            <i class="far fa-heart"></i>
+        <ul class="nav-links">
+          <li class="nav-link active"><a href="/index.html">Trang chủ</a></li>
+          <li class="nav-link"><a href="/about.html">Giới thiệu</a></li>
+          <li class="nav-link"><a href="/products.html">Sản phẩm</a></li>
+          <li class="nav-link"><a href="/contact.html">Liên hệ</a></li>
+        </ul>
+        <div class="holder">
+          <div class="search-box">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Bạn đang tìm kiếm gì?"
+            />
+            <i class="fas fa-search search-icon"></i>
           </div>
+          <div class="header-actions">
+            <div class="action-icon">
+              <i class="far fa-heart"></i>
+            </div>
 
-          <div class="action-icon cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-badge" id="cart-count">0</span>
-          </div>
+            <div class="action-icon cart-icon" id="open-cart">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge" id="cart-count">0</span>
+            </div>
 
-          <div class="action-icon user-dropdown">
-            <i class="far fa-user"></i>
-            <div class="dropdown-menu">
-              <a href="/login.html">Đăng nhập</a>
-              <a href="/register.html">Đăng ký</a>
+            <div class="action-icon user-dropdown">
+              <i class="far fa-user"></i>
+              <div class="dropdown-menu" id="user-menu">
+
+              </div>
             </div>
           </div>
         </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
       </div>
-      <div class="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- Nội dung chính -->
   <div class="product-detail-container">
@@ -85,9 +88,9 @@
           <img src="./assets/img/product/1.jpg" alt="Main Product Image" />
         </div>
         <div class="product-thumbnails">
-          <img src="./assets/img/product/2.jpg" alt="Front View" />
-          <img src="./assets/img/product/3.jpg" alt="Back View" />
-          <img src="./assets/img/product/1.jpg" alt="Model View" />
+          <img src="./assets/img/product/1.jpg" alt="Front View" />
+          <img src="./assets/img/product/2.jpg" alt="Back View" />
+          <img src="./assets/img/product/3.jpg" alt="Model View" />
         </div>
       </div>
 
@@ -450,7 +453,7 @@
       <div class="copyright">&copy; 2025, AURENEST</div>
     </div>
   </footer>
-
+  <script src="./assets/js/scripts.js"></script>
   <script src="./assets/js/product-detail.js"></script>
 </body>
 
