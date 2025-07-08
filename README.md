@@ -12,5 +12,5 @@ Một giao diện website thương mại điện tử hiện đại, được l�
 
 ## 🧱 Công nghệ sử dụng
 
-- HTML5 & CSS3 (bao gồm biến CSS custom và Flexbox/Grid layout)
+- HTML5 & CSS3 (bao gồm biến CSS custom và layout)
 - JavaScript (DOM Manipulation, Local Storage API)
