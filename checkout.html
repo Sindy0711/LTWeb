@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh Toán - AURENEST</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/checkout.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container container-fluid">
+        <div class="logo">
+          <img src="./assets/img/Logo.png" alt="Logo" />
+          <span>AURENEST</span>
+        </div>
+        <ul class="nav-links">
+          <li class="nav-link active"><a href="/index.html">Trang chủ</a></li>
+          <li class="nav-link"><a href="/about.html">Giới thiệu</a></li>
+          <li class="nav-link"><a href="/products.html">Sản phẩm</a></li>
+          <li class="nav-link"><a href="/contact.html">Liên hệ</a></li>
+        </ul>
+        <div class="holder">
+          <div class="search-box">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Bạn đang tìm kiếm gì?"
+            />
+            <i class="fas fa-search search-icon"></i>
+          </div>
+          <div class="header-actions">
+            <div class="action-icon">
+              <i class="far fa-heart"></i>
+            </div>
+
+            <div class="action-icon cart-icon" id="open-cart">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge" id="cart-count">0</span>
+            </div>
+
+            <div class="action-icon user-dropdown">
+              <i class="far fa-user"></i>
+              <div class="dropdown-menu" id="user-menu"></div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="checkout-container">
+        <div class="checkout-title">THANH TOÁN</div>
+        <div class="checkout-grid">
+          <!-- Form người nhận -->
+          <div class="checkout-left">
+            <form id="checkout-form">
+              <div class="form-group">
+                <label for="fullname">Họ và Tên</label>
+                <input type="text" id="fullname" name="fullname" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="text" id="phone" name="phone" required />
+              </div>
+              <div class="form-group">
+                <label for="address">Địa chỉ nhận hàng</label>
+                <textarea
+                  id="address"
+                  name="address"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="note">Ghi chú (nếu có)</label>
+                <textarea id="note" name="note" rows="2"></textarea>
+              </div>
+            </form>
+          </div>
+
+          <!-- Đơn hàng + thanh toán -->
+          <div class="checkout-right">
+            <div class="order-summary">
+              <h3>Đơn hàng của bạn</h3>
+              <div id="order-items">
+                <!-- Sản phẩm sẽ được thêm bằng JS -->
+              </div>
+              <div class="total">
+                <span>Tổng cộng:</span>
+                <span id="order-total">0₫</span>
+              </div>
+
+              <div class="payment-method">
+                <h4>Phương thức thanh toán</h4>
+                <label
+                  ><input type="radio" name="payment" value="cod" checked />
+                  Thanh toán khi nhận hàng (COD)</label
+                >
+                <label
+                  ><input type="radio" name="payment" value="card" /> Thẻ ngân
+                  hàng / Ví điện tử</label
+                >
+              </div>
+
+              <button type="submit" class="submit-btn" onclick="submitOrder()">
+                Xác nhận đặt hàng
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="title">
+            Đăng ký để luôn cập nhật những ưu đãi mới nhất của chúng tôi
+          </h2>
+          <div class="form">
+            <input type="text" placeholder="Điền địa chỉ email của bạn" />
+            <button>Đăng ký</button>
+          </div>
+        </div>
+        <div class="footer-body clearfix">
+          <div class="footer-column">
+            <div class="logo">
+              <img src="./assets/img/Logo.png" alt="Logo" />
+              <h2>AURENEST</h2>
+            </div>
+            <p class="tagline clearfix">
+              Chất liệu cao cấp, thiết kế tinh tế, dành cho những ai yêu sự khác
+              biệt.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h4>Chính sách</h4>
+            <ul>
+              <li><a href="#">Chính sách bảo mật</a></li>
+              <li><a href="#">Chính sách vận chuyển</a></li>
+              <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
+              <li><a href="#">Quy định sử dụng</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Sản phẩm</h4>
+            <ul>
+              <li><a href="#">Quần</a></li>
+              <li><a href="#">Áo</a></li>
+              <li><a href="#">Giày</a></li>
+              <li><a href="#">Nón</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Liên hệ</h4>
+            <ul>
+              <li>(+84)</li>
+              <li>(+84)</li>
+              <li>aurenest@gmail.com</li>
+              <li>624 Đ. Âu Cơ, Phường 10, Tân Bình, Hồ Chí Minh, Việt Nam</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">&copy; 2025, AURENEST</div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/scripts.js" type="module" defer></script>
+    <script src="./assets/js/cart.js"></script>
+  </body>
+</html>

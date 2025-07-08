@@ -391,6 +391,7 @@ async function updateProduct(id, newData) {
   updateDashboardStats();
   showAlertModal("Thành công", "Sản phẩm đã được cập nhật!");
 }
+
 async function showProductModal(product = null) {
   const form = document.getElementById("productForm");
   form.reset();
@@ -404,7 +405,6 @@ async function showProductModal(product = null) {
     document.getElementById("productDescription").value =
       product.description || "";
   } else {
-    editingProductId = null;
     document.getElementById("productModalTitle").textContent = "Thêm sản phẩm";
   }
 
@@ -422,7 +422,6 @@ async function showProductModal(product = null) {
       };
       closeAllModals();
       if (product) {
-        // Cập nhật sản phẩm
         await updateProduct(product.id, productData);
       } else {
         // Thêm sản phẩm mới
@@ -439,6 +438,9 @@ async function showProductModal(product = null) {
 }
 
 // =========================================================
+// Đơn hàng 
+
+// =========================================================
 // Cập nhật thống kê dashboard
 async function updateDashboardStats() {
   // Cập nhật số lượng người dùng
@@ -448,6 +450,9 @@ async function updateDashboardStats() {
   // Cập nhật số lượng sản phẩm
   const products = await getProducts();
   document.getElementById("product-count").textContent = products.length;
+
+  const orders = JSON.parse(localStorage.getItem("orders")) || [];
+  document.getElementById("order-count").textContent = orders.length;
 }
 
 // Khởi tạo

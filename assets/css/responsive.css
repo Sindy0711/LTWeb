@@ -1,4 +1,17 @@
 @media (max-width: 768px) {
+  .hero-text,
+  .hero-image-wrapper,
+  .shop-sidebar,
+  .shop-product-section,
+  .product-card,
+  .blog-card,
+  .new-arrival-card,
+  .shop-product-card {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 0 20px !important;
+  }
+
   .nav-links {
     display: none;
     width: 100%;
