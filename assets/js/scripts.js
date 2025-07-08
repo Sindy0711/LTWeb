@@ -117,10 +117,56 @@ function renderShopProducts(products, currentPage = 1) {
       e.preventDefault();
       const productId = this.getAttribute("data-id");
       addToCart(productId);
+      showAddToCartToast();
+
     });
   });
 
   renderPagination(products.length, currentPage); // ✅ gọi vẽ phân trang
+}
+
+// Hàm hiển thị thông báo thêm vào giỏ hàng
+function showAddToCartToast() {
+  const toastContainer = document.getElementById("toast-container");
+  if (!toastContainer) {
+    // Tạo container nếu chưa có
+    const container = document.createElement("div");
+    container.id = "toast-container";
+    container.style.position = "fixed";
+    container.style.top = "20px";
+    container.style.right = "20px";
+    container.style.zIndex = "9999";
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement("div");
+  toast.className = "toast toast--success";
+  toast.innerHTML = `
+    <div class="toast__icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <div class="toast__body">
+      <h3 class="toast__title">Thành công!</h3>
+      <p class="toast__msg">Sản phẩm đã được thêm vào giỏ hàng</p>
+    </div>
+    <div class="toast__close">
+      <i class="fas fa-times"></i>
+    </div>
+  `;
+
+  document.getElementById("toast-container").appendChild(toast);
+
+  // Tự động ẩn toast sau 3 giây
+  setTimeout(() => {
+    toast.style.animation = "fadeOut 0.5s forwards";
+    setTimeout(() => toast.remove(), 500);
+  }, 3000);
+
+  // Xử lý nút đóng
+  toast.querySelector(".toast__close").addEventListener("click", () => {
+    toast.style.animation = "fadeOut 0.5s forwards";
+    setTimeout(() => toast.remove(), 500);
+  });
 }
 
 // Hàm vẽ phân trang

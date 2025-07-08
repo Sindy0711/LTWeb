@@ -429,6 +429,13 @@ a {
 .add-to-cart-btn:hover {
   background-color: #124a38;
 }
+
+.new-arrival-card:hover,
+.product-card .product-image:hover {
+      transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
 /*  Blog */
 .blog-section {
   padding: 60px 0;
@@ -1135,3 +1142,5 @@ a {
     transform: scale(1.2) rotate(10deg);
   }
 }
+
+
