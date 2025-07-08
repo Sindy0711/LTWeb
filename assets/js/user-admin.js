@@ -165,12 +165,10 @@ function renderUsersTable() {
             <td>${user.role === "admin" ? "Quản trị viên" : "Người dùng"}</td>
             <td>${new Date().toLocaleDateString()}</td>
             <td>
-                <button class="action-btn edit-user-btn" data-id="${
-                  user.id
-                }">Sửa</button>
-                <button class="action-btn delete-btn" data-id="${user.id}" ${
-      user.email === "admin@aurenest.com" ? "disabled" : ""
-    }>Xóa</button>
+                <button class="action-btn edit-user-btn" data-id="${user.id
+      }">Sửa</button>
+                <button class="action-btn delete-btn" data-id="${user.id}" ${user.email === "admin@aurenest.com" ? "disabled" : ""
+      }>Xóa</button>
             </td>
         `;
     usersTableBody.appendChild(row);
@@ -288,31 +286,28 @@ async function renderProductsTable() {
   products.forEach((product) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-            <td>${product.id}</td>
-            <td>${product.name}</td>
-            <td>${product.category}</td>
-            <td>${product.price.toLocaleString()}₫</td>
-            <td>${product.quantity || "N/A"}</td>
-            <td>${product.quantity > 0 ? "Còn hàng" : "Hết hàng"}</td>
-            <td>
-                <button class="action-btn edit-btn" data-id="${
-                  product.id
-                }">Sửa</button>
-                <button class="action-btn delete-btn" data-id="${
-                  product.id
-                }">Xóa</button>
-            </td>
-        `;
+    <td>${product.id}</td>
+    <td>${product.name}</td>
+    <td>${product.category}</td>
+    <td>${product.price.toLocaleString()}₫</td>
+    <td>${product.quantity || "N/A"}</td>
+    <td>${product.quantity > 0 ? "Còn hàng" : "Hết hàng"}</td>
+    <td>
+        <button class="action-btn edit-btn" data-id="${product.id}">Sửa</button>
+        <button class="action-btn delete-product-btn" data-id="${product.id}">Xóa</button>
+    </td>
+`;
     productsTableBody.appendChild(row);
   });
 
   //   Thêm sự kiện cho nút xóa
-  document.querySelectorAll(".delete-btn").forEach((button) => {
+  document.querySelectorAll(".delete-product-btn").forEach((button) => {
     button.addEventListener("click", function () {
       const id = parseInt(this.getAttribute("data-id"));
       deleteProduct(id);
     });
   });
+
 
   // Thêm sự kiện cho nút sửa
   document.querySelectorAll(".edit-btn").forEach((button) => {
@@ -335,7 +330,7 @@ async function deleteProduct(id) {
         const products = await getProducts();
         const updatedProducts = products.filter((product) => product.id !== id);
 
-        // 🟢 Cập nhật vào localStorage!
+        // Cập nhật vào localStorage!
         setProducts(updatedProducts);
         renderProductsTable();
         updateDashboardStats();
