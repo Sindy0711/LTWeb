@@ -137,7 +137,7 @@ function showUserModal(user = null) {
   };
 }
 
-// ========== USER MANAGEMENT FUNCTIONS ==========
+// ========== CHỨC NĂNG QUẢN LÝ NGƯỜI DÙNG ==========
 // Lấy dữ liệu người dùng từ localStorage
 function getUsers() {
   return JSON.parse(localStorage.getItem("users")) || [];
@@ -165,10 +165,12 @@ function renderUsersTable() {
             <td>${user.role === "admin" ? "Quản trị viên" : "Người dùng"}</td>
             <td>${new Date().toLocaleDateString()}</td>
             <td>
-                <button class="action-btn edit-user-btn" data-id="${user.id
-      }">Sửa</button>
-                <button class="action-btn delete-btn" data-id="${user.id}" ${user.email === "admin@aurenest.com" ? "disabled" : ""
-      }>Xóa</button>
+                <button class="action-btn edit-user-btn" data-id="${
+                  user.id
+                }">Sửa</button>
+                <button class="action-btn delete-btn" data-id="${user.id}" ${
+      user.email === "admin@aurenest.com" ? "disabled" : ""
+    }>Xóa</button>
             </td>
         `;
     usersTableBody.appendChild(row);
@@ -294,7 +296,9 @@ async function renderProductsTable() {
     <td>${product.quantity > 0 ? "Còn hàng" : "Hết hàng"}</td>
     <td>
         <button class="action-btn edit-btn" data-id="${product.id}">Sửa</button>
-        <button class="action-btn delete-product-btn" data-id="${product.id}">Xóa</button>
+        <button class="action-btn delete-product-btn" data-id="${
+          product.id
+        }">Xóa</button>
     </td>
 `;
     productsTableBody.appendChild(row);
@@ -307,7 +311,6 @@ async function renderProductsTable() {
       deleteProduct(id);
     });
   });
-
 
   // Thêm sự kiện cho nút sửa
   document.querySelectorAll(".edit-btn").forEach((button) => {
@@ -362,7 +365,17 @@ async function addProduct(productData) {
   // Tự tạo ID mới (max ID + 1)
   const newId =
     products.length > 0 ? Math.max(...products.map((p) => p.id)) + 1 : 1;
-  const newProduct = { id: newId, ...productData };
+
+  // Gán ảnh mặc định nếu không có ảnh
+  const image = productData.image?.trim()
+    ? productData.image.trim()
+    : "/assets/img/product/1.jpg";
+
+  const newProduct = {
+    id: newId,
+    ...productData,
+    image, // đảm bảo luôn có ảnh
+  };
 
   products.push(newProduct);
   setProducts(products);
@@ -433,7 +446,105 @@ async function showProductModal(product = null) {
 }
 
 // =========================================================
-// Đơn hàng 
+// Chức năng quản lý đơn hàng
+function renderOrders() {
+  const orders = JSON.parse(localStorage.getItem("orders")) || [];
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const tbody = document.getElementById("orders-table-body");
+
+  tbody.innerHTML = "";
+
+  if (orders.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6">Chưa có đơn hàng nào.</td></tr>`;
+    return;
+  }
+
+  orders.forEach((order, index) => {
+    const user = users.find((u) => u.id === order.userId);
+    const total = order.totalAmount?.toLocaleString("vi-VN") || "0";
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${order.id}</td>
+      <td>
+        ${order.name}<br/>
+        <small>${user?.email || "Không rõ"}</small>
+      </td>
+      <td>${new Date(order.createdAt).toLocaleString()}</td>
+      <td>${total}₫</td>
+      <td>
+        <span class="status status-${order.status}" id="status-text-${index}">
+          ${getStatusText(order.status)}
+        </span>
+
+      </td>
+      <td>
+        <button class="action-btn btn-update" data-index="${index}">Cập nhật</button>
+        <select class="order-status hidden" data-index="${index}" id="status-select-${index}">
+          ${getStatusOptions(order.status)}
+        </select>
+      </td>
+    `;
+    tbody.appendChild(row);
+  });
+
+  bindStatusUpdateEvents();
+}
+
+function getStatusText(status) {
+  const map = {
+    pending: "Chờ xử lý",
+    processing: "Đang xử lý",
+    completed: "Hoàn tất",
+    cancelled: "Đã huỷ",
+  };
+  return map[status] || status;
+}
+
+function getStatusOptions(current) {
+  const options = [
+    { value: "pending", label: "Chờ xử lý" },
+    { value: "processing", label: "Đang xử lý" },
+    { value: "completed", label: "Hoàn tất" },
+    { value: "cancelled", label: "Đã huỷ" },
+  ];
+
+  return options
+    .map(
+      (o) =>
+        `<option value="${o.value}" ${o.value === current ? "selected" : ""}>${
+          o.label
+        }</option>`
+    )
+    .join("");
+}
+function bindStatusUpdateEvents() {
+  document.querySelectorAll(".btn-update").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const index = this.dataset.index;
+      const select = document.getElementById(`status-select-${index}`);
+      const text = document.getElementById(`status-text-${index}`);
+
+      if (select.classList.contains("hidden")) {
+        // Hiện select để chọn trạng thái
+        select.classList.remove("hidden");
+        select.focus();
+        return;
+      }
+
+      const newStatus = select.value;
+      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+      if (orders[index].status !== newStatus) {
+        orders[index].status = newStatus;
+        localStorage.setItem("orders", JSON.stringify(orders));
+        alert("Trạng thái đơn hàng đã được cập nhật.");
+      }
+
+      renderOrders(); // cập nhật lại bảng
+    });
+  });
+}
 
 // =========================================================
 // Cập nhật thống kê dashboard
@@ -454,6 +565,7 @@ async function updateDashboardStats() {
 document.addEventListener("DOMContentLoaded", function () {
   renderUsersTable();
   renderProductsTable();
+  renderOrders();
   updateDashboardStats();
 
   // Thêm sự kiện khi chuyển sang tab sản phẩm

@@ -215,6 +215,9 @@ th {
 tr:hover {
   background-color: rgba(22, 92, 70, 0.03);
 }
+.hidden {
+  display: none;
+}
 
 .status {
   padding: 5px 10px;
@@ -248,7 +251,8 @@ tr:hover {
 }
 
 .edit-btn,
-.edit-user-btn {
+.edit-user-btn,
+.edit-orders-btn {
   background-color: var(--warning-color);
   color: #333;
 }

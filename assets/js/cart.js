@@ -44,24 +44,30 @@ function submitOrder() {
     alert("Bạn cần đăng nhập để đặt hàng.");
     return;
   }
-
+  let totalAmount = 0;
+  cart.forEach((item) => {
+    const product = products.find((p) => p.id == item.id);
+    if (product) {
+      totalAmount += product.price * item.quantity;
+    }
+  });
   // Tạo đơn hàng
   const newOrder = {
     id: Date.now(),
     userId: currentUser.id,
-    userEmail: currentUser.email || "", 
-    name, 
+    userEmail: currentUser.email || "",
+    name,
     phone,
     address,
-    status: "pending", 
+    status: "pending",
     items: cart,
+    totalAmount, // 👈 Thêm vào đây
     createdAt: new Date().toISOString(),
   };
 
   const orders = JSON.parse(localStorage.getItem("orders")) || [];
   orders.push(newOrder);
   localStorage.setItem("orders", JSON.stringify(orders));
-
   alert("Đơn hàng đã được ghi nhận! Cảm ơn bạn.");
   localStorage.removeItem("cart");
   window.location.href = "/";
