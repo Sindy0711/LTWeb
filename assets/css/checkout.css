@@ -5,6 +5,7 @@
   background: var(--card-bg);
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
 }
 
 .checkout-title {
@@ -15,26 +16,28 @@
 }
 
 .checkout-grid {
-  display: table;
-  width: 100%;
+  font-size: 0; /* Loại bỏ khoảng trắng giữa inline-block */
 }
 
 .checkout-left,
 .checkout-right {
-  display: table-cell;
+  display: inline-block;
   vertical-align: top;
   padding: 20px;
+  font-size: 14px;
 }
 
 .checkout-left {
   width: 60%;
   border-right: 1px solid var(--border-color);
+  box-sizing: border-box;
 }
 
 .checkout-right {
   width: 40%;
   background: var(--light-bg);
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .form-group {
@@ -56,6 +59,7 @@
   border-radius: 6px;
   font-size: 14px;
   background: white;
+  box-sizing: border-box;
 }
 
 .order-summary h3 {
@@ -64,17 +68,37 @@
 }
 
 .order-item {
-  display: flex;
-  justify-content: space-between;
+  text-align: justify;
   margin-bottom: 12px;
+}
+
+.order-item::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+.order-item span:first-child {
+  float: left;
+}
+
+.order-item span:last-child {
+  float: right;
 }
 
 .total {
   font-weight: bold;
   font-size: 18px;
-  display: flex;
-  justify-content: space-between;
   margin-top: 20px;
+  overflow: hidden;
+}
+
+.total span:first-child {
+  float: left;
+}
+
+.total span:last-child {
+  float: right;
 }
 
 .payment-method {
@@ -110,14 +134,10 @@
 }
 
 @media (max-width: 768px) {
-  .checkout-grid {
-    display: block;
-  }
-
   .checkout-left,
   .checkout-right {
-    display: block;
     width: 100%;
+    display: block;
     border: none;
   }
 
