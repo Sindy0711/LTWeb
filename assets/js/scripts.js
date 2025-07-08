@@ -7,21 +7,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Khởi tạo sản phẩm từ localStorage
   allProducts = getProducts();
-  renderShopProducts(allProducts);
+  renderShopProducts(allProducts, 1);
 
-  const checkoutBtn = document.querySelector(".checkout-btn");
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener("click", function () {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      if (cart.length === 0) {
-        alert("Giỏ hàng trống!");
-        return;
-      }
-      // ✅ Chuyển hướng đến trang thanh toán
-      window.location.href = "checkout.html";
-    });
-  }
+  setupCheckoutHandler();
 });
+
+// Hàm khởi tạo nút thanh toán
+function setupCheckoutHandler() {
+  const checkoutBtn = document.querySelector(".checkout-btn");
+  if (!checkoutBtn) return;
+
+  checkoutBtn.addEventListener("click", function () {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+      alert("Giỏ hàng trống!");
+      return;
+    }
+    window.location.href = "checkout.html";
+  });
+}
 
 //  Hàm khởi tạo giao diện người dùng
 function setupUserMenu() {
@@ -73,12 +77,20 @@ function getProducts() {
   return JSON.parse(localStorage.getItem("products")) || [];
 }
 
-function renderShopProducts(products) {
+function renderShopProducts(products, currentPage = 1) {
   const container = document.getElementById("shop-product-list");
-  if (!container) return;
+  const pagination = document.querySelector(".shop-pagination");
+  if (!container || !pagination) return;
+
+  const itemsPerPage = 12;
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const currentItems = products.slice(start, end);
+
   container.innerHTML = "";
 
-  products.forEach((product) => {
+  currentItems.forEach((product) => {
     const card = document.createElement("div");
     card.className = "shop-product-card";
     card.innerHTML = `
@@ -99,7 +111,7 @@ function renderShopProducts(products) {
     container.appendChild(card);
   });
 
-  // Gắn sự kiện cho các nút thêm vào giỏ
+  // Gắn sự kiện thêm giỏ
   document.querySelectorAll(".add-to-cart-btn").forEach((btn) => {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
@@ -107,6 +119,53 @@ function renderShopProducts(products) {
       addToCart(productId);
     });
   });
+
+  renderPagination(products.length, currentPage); // ✅ gọi vẽ phân trang
+}
+
+// Hàm vẽ phân trang
+function renderPagination(totalItems, currentPage) {
+  const pagination = document.querySelector(".shop-pagination");
+  if (!pagination) return;
+
+  const itemsPerPage = 12;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  pagination.innerHTML = "";
+
+  if (totalPages <= 1) return;
+
+  // Nút trước
+  const prev = document.createElement("button");
+  prev.innerHTML = "&lt; Trước";
+  prev.disabled = currentPage === 1;
+  prev.addEventListener("click", () =>
+    renderShopProducts(allProducts, currentPage - 1)
+  );
+  pagination.appendChild(prev);
+
+  // Các nút trang
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 1) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      if (i === currentPage) btn.classList.add("active");
+      btn.addEventListener("click", () => renderShopProducts(allProducts, i));
+      pagination.appendChild(btn);
+    } else if (i === currentPage - 2 || i === currentPage + 2) {
+      const dots = document.createElement("span");
+      dots.textContent = "...";
+      pagination.appendChild(dots);
+    }
+  }
+
+  // Nút tiếp
+  const next = document.createElement("button");
+  next.innerHTML = "Tiếp &gt;";
+  next.disabled = currentPage === totalPages;
+  next.addEventListener("click", () =>
+    renderShopProducts(allProducts, currentPage + 1)
+  );
+  pagination.appendChild(next);
 }
 
 function addToCart(productId) {
