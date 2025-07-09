@@ -1,16 +1,32 @@
 let allProducts = [];
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   setupUserMenu();
   setupCartModal();
   updateCartCount();
 
-  // Khởi tạo sản phẩm từ localStorage
+  await fetchAndStoreProducts();
   allProducts = getProducts();
   renderShopProducts(allProducts, 1);
 
   setupCheckoutHandler();
 });
+
+async function fetchAndStoreProducts() {
+  if (!localStorage.getItem("products")) {
+    try {
+      const response = await fetch("./assets/data/products.json");
+      console.log("Fetch status:", response.status);
+
+      if (!response.ok) throw new Error("Fetch lỗi");
+
+      const products = await response.json();
+      localStorage.setItem("products", JSON.stringify(products));
+      console.log("✅ Đã fetch và lưu sản phẩm vào localStorage");
+    } catch (err) {
+      console.error("❌ Lỗi khi fetch file JSON:", err);
+    }
+  }
+}
 
 // Hàm khởi tạo nút thanh toán
 function setupCheckoutHandler() {
@@ -118,7 +134,6 @@ function renderShopProducts(products, currentPage = 1) {
       const productId = this.getAttribute("data-id");
       addToCart(productId);
       showAddToCartToast();
-
     });
   });
 
